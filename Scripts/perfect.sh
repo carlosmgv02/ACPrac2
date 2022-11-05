@@ -47,7 +47,7 @@ grep "$pred.bpred_dir_rate" $dir/$tasca >> $out
 #EQUAKE
 cd $equake
 dir=$root"equake/perfect"
-tasca="perfect.txt"
+tasca="perfectEQUAKE.txt"
 echo "processing "$tasca
 sim-outorder -fastfwd 50000000 \
 -max:inst 50000000 \
