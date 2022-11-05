@@ -6,9 +6,9 @@ entity, or for any commercial purpose, without the prior written permission
 of SimpleScalar, LLC (info@simplescalar.com).
 
 warning: section `.comment' ignored...
-sim: command line: sim-outorder -fastfwd 100000000 -max:inst 100000000 -bpred nottaken -mem:width 32 -mem:lat 300 2 -redir:sim /home/milax/Documents/GitHub/ACPrac2/Resultats/ammp/notTaken/notTakenAMMP.txt /lib/specs2000/ammp/exe/ammp.exe 
+sim: command line: sim-outorder -fastfwd 100000000 -max:inst 100000000 -bpred bimod -bpred:bimod 8 -mem:width 32 -mem:lat 300 2 -redir:sim /home/milax/Documents/GitHub/ACPrac2/Resultats/ammp/bimodal/bimodalAMMP8.txt /lib/specs2000/ammp/exe/ammp.exe 
 
-sim: simulation started @ Thu Oct 27 09:41:16 2022, options follow:
+sim: simulation started @ Sat Nov  5 19:17:11 2022, options follow:
 
 sim-outorder: This simulator implements a very detailed out-of-order issue
 superscalar processor with a two-level memory system and speculative
@@ -24,7 +24,7 @@ latency of all pipeline operations.
 -seed                       1 # random number generator seed (0 for timer seed)
 # -q                    false # initialize and terminate immediately
 # -chkpt               <null> # restore EIO trace execution from <fname>
-# -redir:sim     /home/milax/Documents/GitHub/ACPrac2/Resultats/ammp/notTaken/notTakenAMMP.txt # redirect simulator output to file (non-interactive only)
+# -redir:sim     /home/milax/Documents/GitHub/ACPrac2/Resultats/ammp/bimodal/bimodalAMMP8.txt # redirect simulator output to file (non-interactive only)
 # -redir:prog          <null> # redirect simulated program output to file
 -nice                       0 # simulator scheduling priority
 -max:inst           100000000 # maximum number of inst's to execute
@@ -33,8 +33,8 @@ latency of all pipeline operations.
 -fetch:ifqsize              4 # instruction fetch queue size (in insts)
 -fetch:mplat                3 # extra branch mis-prediction latency
 -fetch:speed                1 # speed of front-end of machine relative to execution core
--bpred               nottaken # branch predictor type {nottaken|taken|perfect|bimod|2lev|comb}
--bpred:bimod     2048 # bimodal predictor config (<table size>)
+-bpred                  bimod # branch predictor type {nottaken|taken|perfect|bimod|2lev|comb}
+-bpred:bimod     8 # bimodal predictor config (<table size>)
 -bpred:2lev      1 1024 8 0 # 2-level predictor config (<l1size> <l2size> <hist_size> <xor>)
 -bpred:comb      1024 # combining predictor config (<meta_table_size>)
 -bpred:ras                  8 # return address stack size (0 for no return stack)
@@ -56,4 +56,4 @@ latency of all pipeline operations.
 -cache:il2                dl2 # l2 instruction cache config, i.e., {<config>|dl2|none}
 -cache:il2lat               6 # l2 instruction cache hit latency (in cycles)
 -cache:flush            false # flush caches on system calls
--cache:icompress        false # 
+-cache:icompress        f
