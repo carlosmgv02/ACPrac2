@@ -1,0 +1,81 @@
+#! /bin/bash
+
+function createFolders
+{
+	cd $1
+	test="taken"
+	if [ -e $test ] ; then
+		rm -r $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="taken"
+	if [ -e $test ] ; then
+		rm -r $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+	test="notTaken"
+	if [ -e $test ] ; then
+		rm -r $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="perfect"
+	if [ -e $test ] ; then
+		rm -r $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="bimodal"
+	if [ -e $test ] ; then
+		rm -r $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="gshare"
+	if [ -e $test ] ; then
+		rm -r $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="gag"
+	if [ -e $test ] ; then
+		rm -r $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	tesT="pag"
+	if [ -e $test ] ; then
+		rm -r $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+}
+function createDirectories
+{
+	dir="/home/milax/Documents/GitHub/ACPrac2/Resultats"
+	createFolders $dir/"ammp"
+	createFolders $dir/"eon"
+	createFolders $dir/"equake"
+	createFolders $dir/"gap"
+	createFolders $dir/"mesa"
+}
+
+createDirectories
+cd "/home/milax/Documents/GitHub/ACPrac2/Scripts"
+./notTaken
