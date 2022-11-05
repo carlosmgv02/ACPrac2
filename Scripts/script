@@ -1,0 +1,119 @@
+#! /bin/bash
+
+<<com
+SCRIPT AC BENCHMARKS PREDICTORS DE SALT
+
+AUTHORS:
+    -Joel Teodoro Gómez
+    -Carlos Martínez García-Villarrubia
+INFO:
+Tindrem en compte els següents paràmetres per a evaluar el rendiment:
+	-IPC
+	-bpred_nottaken.bpred_dir_rate
+com
+
+ammp="/home/milax/Documents/GitHub/ACPrac2/Resultats/ammp"
+memWidth="mem:width 32"
+memLat="mem:lat 300 2"
+function createFolders
+{
+	cd $1
+	test="taken"
+	if [-e $test ] then
+		rmdir $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="taken"
+	if [-e $test ] then
+		rmdir $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+	test="notTaken"
+	if [-e $test ] then
+		rmdir $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="perfect"
+	if [-e $test ] then
+		rmdir $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="bimodal"
+	if [-e $test ] then
+		rmdir $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="gshare"
+	if [-e $test ] then
+		rmdir $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	test="gag"
+	if [-e $test ] then
+		rmdir $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+
+	tesT="pag"
+	if [-e $test ] then
+		rmdir $test
+		mkdir $test
+	else
+		mkdir $test
+	fi
+}
+function createDirectories
+{
+	dir="/home/milax/Documents/GitHub/ACPrac2/Resultats"
+	createFolders $dir/"ammp"
+	createFolders $dir/"eon"
+	createFolders $dir/"equake"
+	createFolders $dir/"gap"
+	createFolders $dir/"mesa"
+}
+#AMMP
+createDirectories
+cd /lib/specs2000/ammp/data/ref
+	#NOTTAKEN
+	dir=$ammp"/notTaken"
+	tasca="notTakenAMMP.txt"
+	echo "processing "$tasca
+	sim-outorder -fastfwd 100000000 \
+	-max:inst 100000000 \
+	-bpred nottaken \
+	-$memWidth \
+	-$memLat \
+	-redir:sim $dir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $dir/ammp.out 		2> $dir/ammp.err
+
+	
+	#TAKEN
+	dir=$ammp"/taken"
+	tasca="takenAMMP.txt"
+	echo "processing"$tasca
+	sim-outorder -fastfwd 100000000 \
+	-max:inst 100000000 \
+	-bpred taken \
+	-$memWidth \
+	-$memLat \
+	-redir:sim $dir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $dir/ammp.out 		2> $dir/ammp.err
+	
+	
