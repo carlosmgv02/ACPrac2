@@ -37,8 +37,8 @@ for i in 8 32 128 512 2048
 	do
 		tasca="bimodalAMMP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 100000000 \
-		-max:inst 100000000 \
+		sim-outorder -fastfwd 50000000 \
+		-max:inst 50000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \

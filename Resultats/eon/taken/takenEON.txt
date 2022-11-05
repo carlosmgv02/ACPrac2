@@ -6,9 +6,9 @@ entity, or for any commercial purpose, without the prior written permission
 of SimpleScalar, LLC (info@simplescalar.com).
 
 warning: section `.comment' ignored...
-sim: command line: sim-outorder -fastfwd 100000000 -max:inst 100000000 -bpred taken -mem:width 32 -mem:lat 300 2 -redir:sim /home/milax/Documents/GitHub/ACPrac2/Resultats/ammp/taken/takenEON.txt /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook done 
+sim: command line: sim-outorder -fastfwd 50000000 -max:inst 50000000 -bpred taken -mem:width 32 -mem:lat 300 2 -redir:sim /home/milax/Documents/GitHub/ACPrac2/Resultats/eon/taken/takenEON.txt /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook done 
 
-sim: simulation started @ Sat Nov  5 20:14:55 2022, options follow:
+sim: simulation started @ Sat Nov  5 22:19:04 2022, options follow:
 
 sim-outorder: This simulator implements a very detailed out-of-order issue
 superscalar processor with a two-level memory system and speculative
@@ -24,11 +24,11 @@ latency of all pipeline operations.
 -seed                       1 # random number generator seed (0 for timer seed)
 # -q                    false # initialize and terminate immediately
 # -chkpt               <null> # restore EIO trace execution from <fname>
-# -redir:sim     /home/milax/Documents/GitHub/ACPrac2/Resultats/ammp/taken/takenEON.txt # redirect simulator output to file (non-interactive only)
+# -redir:sim     /home/milax/Documents/GitHub/ACPrac2/Resultats/eon/taken/takenEON.txt # redirect simulator output to file (non-interactive only)
 # -redir:prog          <null> # redirect simulated program output to file
 -nice                       0 # simulator scheduling priority
--max:inst           100000000 # maximum number of inst's to execute
--fastfwd            100000000 # number of insts skipped before timing starts
+-max:inst            50000000 # maximum number of inst's to execute
+-fastfwd             50000000 # number of insts skipped before timing starts
 # -ptrace              <null> # generate pipetrace, i.e., <fname|stdout|stderr> <range>
 -fetch:ifqsize              4 # instruction fetch queue size (in insts)
 -fetch:mplat                3 # extra branch mis-prediction latency
@@ -55,8 +55,8 @@ latency of all pipeline operations.
 -cache:il1lat               1 # l1 instruction cache hit latency (in cycles)
 -cache:il2                dl2 # l2 instruction cache config, i.e., {<config>|dl2|none}
 -cache:il2lat               6 # l2 instruction cache hit latency (in cycles)
--cache:flush            fBad Arg List.  Usage: /lib/specs2000/eon/exe/eon.execontrolFile cameraFile surfacesFile
-alse # flush caches on system calls
+-cache:flush            falseBad Arg List.  Usage: /lib/specs2000/eon/exe/eon.execontrolFile cameraFile surfacesFile
+ # flush caches on system calls
 -cache:icompress        false # convert 64-bit inst addresses to 32-bit inst equivalents
 -mem:lat         300 2 # memory access latency (<first_chunk> <inter_chunk>)
 -mem:width                 32 # memory access bus width (in bytes)
@@ -130,7 +130,7 @@ alse # flush caches on system calls
 
 
 
-sim: ** fast forwarding 100000000 insts **
+sim: ** fast forwarding 50000000 insts **
 warning: partially supported sigprocmask() call...
 
 sim: ** simulation statistics **
@@ -252,6 +252,6 @@ ld_target_big_endian              0 # target executable endian-ness, non-zero if
 mem.page_count                  155 # total number of pages allocated
 mem.page_mem                  1240k # total size of memory pages allocated
 mem.ptab_misses                1588 # total first level page table misses
-mem.ptab_accesses           5221600 # total page table accesses
+mem.ptab_accesses           5222932 # total page table accesses
 mem.ptab_miss_rate           0.0003 # first level page table miss rate
 

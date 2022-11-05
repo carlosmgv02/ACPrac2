@@ -1,6 +1,6 @@
-#! /bin/bash
+https://prod.liveshare.vsengsaas.visualstudio.com/join?294AF27515C4756A31BFEA652BE85832A781#! /bin/bash
 
-<<com
+
 SCRIPT AC BENCHMARKS PREDICTORS DE SALT
 
 AUTHORS:
@@ -100,8 +100,8 @@ function notTaken
 	dir=$ammp"/notTaken"
 	tasca="notTakenAMMP.txt"
 	echo "processing "$tasca
-	sim-outorder -fastfwd 100000000 \
-	-max:inst 100000000 \
+	sim-outorder -fastfwd 50000000 \
+	-max:inst 50000000 \
 	-bpred nottaken \
 	-$memWidth \
 	-$memLat \
@@ -112,8 +112,8 @@ function taken
 	dir=$ammp"/taken"
 	tasca="takenAMMP.txt"
 	echo "processing "$tasca
-	sim-outorder -fastfwd 100000000 \
-	-max:inst 100000000 \
+	sim-outorder -fastfwd 50000000 \
+	-max:inst 50000000 \
 	-bpred taken \
 	-$memWidth \
 	-$memLat \
@@ -125,8 +125,8 @@ function perfect
 	dir=$ammp/"perfect"
 	tasca="perfectAMMP.txt"
 	echo "processing "$tasca
-	sim-outorder -fastfwd 100000000 \
-	-max:inst 100000000 \
+	sim-outorder -fastfwd 50000000 \
+	-max:inst 50000000 \
 	-bpred perfect \
 	-$memWidth \
 	-$memLat \
@@ -141,8 +141,8 @@ function bimodal
 	do
 		tasca="bimodalAMMP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 100000000 \
-		-max:inst 100000000 \
+		sim-outorder -fastfwd 50000000 \
+		-max:inst 50000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \
@@ -156,8 +156,8 @@ function bimodal
 	do
 		tasca="bimodalEON$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 100000000 \
-		-max:inst 100000000 \
+		sim-outorder -fastfwd 50000000 \
+		-max:inst 50000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \
@@ -171,8 +171,8 @@ function bimodal
 	do
 		tasca="bimodalEQUAKE$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 100000000 \
-		-max:inst 100000000 \
+		sim-outorder -fastfwd 50000000 \
+		-max:inst 50000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \
@@ -186,8 +186,8 @@ function bimodal
 	do
 		tasca="bimodalGAP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 100000000 \
-		-max:inst 100000000 \
+		sim-outorder -fastfwd 50000000 \
+		-max:inst 50000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \
@@ -201,8 +201,8 @@ function bimodal
 	do
 		tasca="bimodalMESA$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 100000000 \
-		-max:inst 100000000 \
+		sim-outorder -fastfwd 50000000 \
+		-max:inst 50000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \

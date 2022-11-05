@@ -1,0 +1,360 @@
+#! /bin/bash
+<<com
+SCRIPT AC BENCHMARKS PROCESSADORS
+
+AUTHORS:
+    -Joel Teodoro Gómez
+    -Carlos Martínez García-Villarrubia
+com
+
+#directoris on guardarem tot //falten per crear alguns!!!
+ammp="/home/milax/Documents/GitHub/ACPrac1/Resultats/ammp"
+eon="/home/milax/Documents/GitHub/ACPrac1/Resultats/eon"
+equake="/home/milax/Documents/GitHub/ACPrac1/Resultats/equake"
+gap="/home/milax/Documents/GitHub/ACPrac1/Resultats/gap"
+mesa="/home/milax/Documents/GitHub/ACPrac1/Resultats/mesa"
+
+
+
+
+<<com
+:'
+• ammp: ammp < ammp.in > ammp.out 2> ammp.err
+• eon: eon chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > cook_log.out 2> cook_log.err
+• equake: equake < inp.in > inp.out 2> inp.err
+• gap: gap -l ./ -q -m 192M < ref.in > ref.out 2> ref.err
+• mesa: mesa -frames 1000 -meshfile mesa.in -ppmfile mesa.ppm
+'
+com
+
+#SIMULACIONES
+
+
+
+    #Intel
+
+fetch=8
+decode=6
+issue=6
+commit=12
+
+ruu=512
+lsq=4
+
+memlat="16 2"
+memwidth=64
+
+ialu=5
+imult=5
+memport=5
+fpalu=3
+fpmult=3
+
+CACHE_IL1="64:64:8:l"
+CACHE_DL1="64:64:8:l"
+CACHE_L2="2048:64:8:l"
+
+#AMMP
+cd /lib/specs2000/ammp/data/ref
+intelDir=$ammp"/Intel"
+tasca="IntelAMMP.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-redir:sim $intelDir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $ammp/ammp.out 2> $ammp/ammp.err
+
+dir="/home/milax/Documents/GitHub/ACPrac1/Resultats/scriptIntelOrig.txt"
+
+echo "AMMP:     " > $dir
+grep "CACHE" $intelDir/$tasca >> $dir
+grep "sim_IPC" $intelDir/$tasca >> $dir
+
+#EON
+cd /lib/specs2000/eon/data/ref
+intelDir=$eon"/Intel"
+tasca="IntelEON.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-redir:sim $intelDir/$tasca /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > $eon/cook_log.out 2> $eon/cook_log.err
+
+echo "EON:     " >> $dir
+grep "CACHE" $intelDir/$tasca >> $dir
+grep "sim_IPC" $intelDir/$tasca >> $dir
+
+#EQUAKE
+cd /lib/specs2000/equake/data/ref
+intelDir=$equake"/Intel"
+tasca="IntelEQUAKE.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-redir:sim $intelDir/$tasca /lib/specs2000/equake/exe/equake.exe < inp.in > $equake/inp.out 2> $equake/inp.err
+    
+    echo "EQUAKE:     " >> $dir
+grep "CACHE" $intelDir/$tasca >> $dir
+grep "sim_IPC" $intelDir/$tasca >> $dir
+
+#GAP
+cd /lib/specs2000/gap/data/ref
+intelDir=$gap/"Intel"
+tasca="IntelGAP.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-redir:sim $intelDir/$tasca /lib/specs2000/gap/exe/gap.exe -l /usr/lib/specs2000/gap/data/all -q -m 192M < ref.in > $gap/ref.out 2> $gap/ref.err
+
+echo "GAP:     " >> $dir
+grep "CACHE" $intelDir/$tasca >> $dir
+grep "sim_IPC" $intelDir/$tasca >> $dir
+
+#MESA
+cd /lib/specs2000/mesa/data/ref
+intelDir=$mesa/"Intel"
+tasca="IntelMESA.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-redir:sim $intelDir/$tasca /lib/specs2000/mesa/exe/mesa.exe -frames 1000 -meshfile mesa.in -ppmfile mesa.ppm
+
+echo "MESA:     " >> $dir
+grep "CACHE" $intelDir/$tasca >> $dir
+grep "sim_IPC" $intelDir/$tasca >> $dir
+
+    #AMD
+
+fetch=4
+decode=4
+issue=16
+commit=12
+
+ruu=256
+lsq=4
+
+memwidth=64
+memlat="16 2"
+
+ialu=4
+imult=4
+memport=3
+fpalu=4
+fpmult=4
+
+CACHE_IL1="64:64:8:l"
+CACHE_DL1="64:64:8:l"
+CACHE_L2="1024:64:8:l"
+
+
+
+#AMMP
+cd /lib/specs2000/ammp/data/ref
+amdDir=$ammp"/AMD"
+tasca="AmdAMMP.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-res:ialu $ialu \
+-res:imult $imult \
+-res:memport $memport \
+-res:fpalu $fpalu \
+-res:fpmult $fpmult \
+-redir:sim $amdDir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $ammp/ammp.out 2> $ammp/ammp.err
+
+dir="/home/milax/Documents/GitHub/ACPrac1/Resultats/scriptAMDorig.txt"
+
+echo "MESA:     " > $dir
+grep "CACHE" $amdDir/$tasca >> $dir
+grep "sim_IPC" $amdDir/$tasca >> $dir
+
+#EON
+
+cd /lib/specs2000/eon/data/ref
+amdDir=$eon"/AMD"
+tasca="AmdEON.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-res:ialu $ialu \
+-res:imult $imult \
+-res:memport $memport \
+-res:fpalu $fpalu \
+-res:fpmult $fpmult \
+-redir:sim $amdDir/$tasca /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > $eon/cook_log.out 2> $eon/cook_log.err
+ 
+  echo "EON:     " >> $dir
+grep "CACHE" $amdDir/$tasca >> $dir
+grep "sim_IPC" $amdDir/$tasca >> $dir
+
+#EQUAKE
+cd /lib/specs2000/equake/data/ref
+amdDir=$equake"/AMD"
+tasca="AmdEQUAKE.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-res:ialu $ialu \
+-res:imult $imult \
+-res:memport $memport \
+-res:fpalu $fpalu \
+-res:fpmult $fpmult \
+-redir:sim $amdDir/$tasca /lib/specs2000/equake/exe/equake.exe < inp.in > $equake/inp.out 2> $equake/inp.err
+    
+echo "EQUAKE:     " >> $dir
+grep "CACHE" $amdDir/$tasca >> $dir
+grep "sim_IPC" $amdDir/$tasca >> $dir
+
+#GAP
+cd /lib/specs2000/gap/data/ref
+amdDir=$gap"/AMD"
+tasca="AmdGAP.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-res:ialu $ialu \
+-res:imult $imult \
+-res:memport $memport \
+-res:fpalu $fpalu \
+-res:fpmult $fpmult \
+-redir:sim $amdDir/$tasca /lib/specs2000/gap/exe/gap.exe -l /usr/lib/specs2000/gap/data/all -q -m 192M < ref.in > $gap/ref.out 2> $gap/ref.err
+
+echo "GAP:     " >> $dir
+grep "CACHE" $amdDir/$tasca >> $dir
+grep "sim_IPC" $amdDir/$tasca >> $dir
+
+#MESA
+cd /lib/specs2000/mesa/data/ref
+amdDir=$mesa"/AMD"
+tasca="AmdMESA.txt"
+echo $tasca
+
+sim-outorder -fastfwd 50000000 \
+-max:inst 50000000 \
+-cache:il1 CACHE_IL1:$CACHE_IL1 \
+-cache:dl1 CACHE_DL1:$CACHE_DL1 \
+-cache:il2 CACHE_DL2:$CACHE_L2 \
+-fetch:ifqsize $fetch \
+-decode:width $decode \
+-issue:width $issue \
+-commit:width $commit \
+-ruu:size $ruu \
+-lsq:size $lsq \
+-mem:lat $memlat \
+-mem:width $memwidth \
+-res:ialu $ialu \
+-res:imult $imult \
+-res:memport $memport \
+-res:fpalu $fpalu \
+-res:fpmult $fpmult \
+-redir:sim $amdDir/$tasca /lib/specs2000/mesa/exe/mesa.exe -frames 1000 -meshfile mesa.in -ppmfile mesa.ppm
+
+echo "MESA:     " >> $dir
+grep "CACHE" $amdDir/$tasca >> $dir
+grep "sim_IPC" $amdDir/$tasca >> $dir
