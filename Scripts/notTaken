@@ -52,7 +52,7 @@ memLat="mem:lat 300 2"
 	-bpred nottaken \
 	-$memWidth \
 	-$memLat \
-	redir:sim $dir/$tasca /lib/specs2000/gap/exe/gap.exe -l /usr/lib/specs2000/gap/data/all -q -m 192M < ref.in > $dir/ref.out 2> $dir/ref.err	
+	-redir:sim $dir/$tasca /lib/specs2000/gap/exe/gap.exe -l /usr/lib/specs2000/gap/data/all -q -m 192M < ref.in > $dir/ref.out 2> $dir/ref.err	
 
     cd $mesa
     dir=$root"mesa/notTaken"
