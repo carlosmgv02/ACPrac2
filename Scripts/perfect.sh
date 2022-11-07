@@ -16,6 +16,7 @@ pred="perfect"
 #AMMP
 cd $ammp
 dir=$root"ammp/perfect"
+out=$dir"/PERFECT_AMMP.txt"
 tasca="perfectAMMP.txt"
 echo "processing "$tasca
 sim-outorder -fastfwd 50000000 \
@@ -26,12 +27,13 @@ sim-outorder -fastfwd 50000000 \
 -redir:sim $dir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $dir/ammp.out 		2> $dir/ammp.err
 echo "perfect:" > $out	
 grep "sim_IPC" $dir/$tasca >> $out
-grep "$pred.bpred_dir_rate" $dir/$tasca >> $out
+grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
 
 
 #EON
 cd $eon
 dir=$root"eon/perfect"
+out=$dir"/PERFECT_EON.txt"
 tasca="perfectEON.txt"
 echo "processing "$tasca
 sim-outorder -fastfwd 50000000 \
@@ -42,11 +44,12 @@ sim-outorder -fastfwd 50000000 \
 -redir:sim $dir/$tasca /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > $dir/cook_log.out 2> $dir/cook_log.err	done
 echo "perfect:" > $out	
 grep "sim_IPC" $dir/$tasca >> $out
-grep "$pred.bpred_dir_rate" $dir/$tasca >> $out
+grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
 
 #EQUAKE
 cd $equake
 dir=$root"equake/perfect"
+out=$dir"/PERFECT_EQUAKE.txt"
 tasca="perfectEQUAKE.txt"
 echo "processing "$tasca
 sim-outorder -fastfwd 50000000 \
@@ -57,11 +60,12 @@ sim-outorder -fastfwd 50000000 \
 -redir:sim $dir/$tasca /lib/specs2000/equake/exe/equake.exe < inp.in > $dir/inp.out 2> $dir/inp.err	
 echo "perfect:" > $out	
 grep "sim_IPC" $dir/$tasca >> $out
-grep "$pred.bpred_dir_rate" $dir/$tasca >> $out
+grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
 
 #GAP
 cd $gap
 dir=$root"gap/perfect"
+out=$dir"/PERFECT_GAP.txt"
 tasca="perfectGAP.txt"
 echo "processing "$tasca
 sim-outorder -fastfwd 50000000 \
@@ -72,11 +76,12 @@ sim-outorder -fastfwd 50000000 \
 -redir:sim $dir/$tasca /lib/specs2000/gap/exe/gap.exe -l /usr/lib/specs2000/gap/data/all -q -m 192M < ref.in > $dir/ref.out 2> $dir/ref.err	
 echo "perfect:" > $out	
 grep "sim_IPC" $dir/$tasca >> $out
-grep "$pred.bpred_dir_rate" $dir/$tasca >> $out
+grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
 
 #MESA
 cd $mesa
 dir=$root"mesa/perfect"
+out=$dir"/PERFECT_MESA.txt"
 tasca="perfectMESA.txt"
 echo "processing "$tasca
 sim-outorder -fastfwd 50000000 \
@@ -87,6 +92,6 @@ sim-outorder -fastfwd 50000000 \
 -redir:sim $dir/$tasca /lib/specs2000/mesa/exe/mesa.exe -frames 1000 -meshfile mesa.in -ppmfile mesa.ppm
 echo "perfect:" > $out	
 grep "sim_IPC" $dir/$tasca >> $out
-grep "$pred.bpred_dir_rate" $dir/$tasca >> $out
+grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
 
 

@@ -8,6 +8,7 @@ gap="/lib/specs2000/gap/data/ref"
 mesa="/lib/specs2000/mesa/data/ref"
 memWidth="mem:width 32"
 memLat="mem:lat 300 2"
+
 pred="bimod"
 
 cd $ammp
@@ -45,7 +46,7 @@ cd $ammp
 		-bpred:bimod $i \
 		-$memWidth \
 		-$memLat \
-		-redir:sim $dir/$tasca /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > $dir/cook_log.out 2> $dir/cook_log.err	done
+		-redir:sim $dir/$tasca /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > $eon/cook_log.out 2> $eon/cook_log.err
         grep "sim_IPC" $dir/$tasca >> $out
         grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
     done
