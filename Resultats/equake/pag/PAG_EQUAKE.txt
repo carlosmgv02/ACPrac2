@@ -1,7 +1,15 @@
 PAG:
+
+	
 sim_IPC                      1.2458 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.6911 # branch direction-prediction rate (i.e., all-hits/updates)
 sim_IPC                      1.2103 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.6727 # branch direction-prediction rate (i.e., all-hits/updates)
 sim_IPC                      1.3341 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.7661 # branch direction-prediction rate (i.e., all-hits/updates)
 sim_IPC                      1.4100 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.8150 # branch direction-prediction rate (i.e., all-hits/updates)
 sim_IPC                      1.5530 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.9007 # branch direction-prediction rate (i.e., all-hits/updates)
 sim_IPC                      1.5734 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.8973 # branch direction-prediction rate (i.e., all-hits/updates)

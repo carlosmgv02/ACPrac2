@@ -8,7 +8,7 @@ of SimpleScalar, LLC (info@simplescalar.com).
 warning: section `.comment' ignored...
 sim: command line: sim-outorder -fastfwd 50000000 -max:inst 50000000 -bpred 2lev -bpred:2lev 1 32 5 0 -mem:width 32 -mem:lat 300 2 -redir:sim /home/milax/Documents/GitHub/ACPrac2/Resultats/mesa/gag/gagMESA32.txt /lib/specs2000/mesa/exe/mesa.exe -frames 1000 -meshfile mesa.in -ppmfile mesa.ppm 
 
-sim: simulation started @ Mon Nov  7 21:21:18 2022, options follow:
+sim: simulation started @ Mon Nov  7 22:37:53 2022, options follow:
 
 sim-outorder: This simulator implements a very detailed out-of-order issue
 superscalar processor with a two-level memory system and speculative
@@ -138,8 +138,8 @@ sim_num_refs               17516607 # total number of loads and stores committed
 sim_num_loads              13709252 # total number of loads committed
 sim_num_stores         3807355.0000 # total number of stores committed
 sim_num_branches            8225964 # total number of branches committed
-sim_elapsed_time                 18 # total simulation time in seconds
-sim_inst_rate          2777777.8333 # simulation speed (in insts/sec)
+sim_elapsed_time                 38 # total simulation time in seconds
+sim_inst_rate          1315789.5000 # simulation speed (in insts/sec)
 sim_total_insn             57462402 # total number of instructions executed
 sim_total_refs             18911546 # total number of loads and stores executed
 sim_total_loads            15004582 # total number of loads executed
