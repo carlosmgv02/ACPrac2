@@ -25,7 +25,8 @@ sim-outorder -fastfwd 50000000 \
 -$memWidth \
 -$memLat \
 -redir:sim $dir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $dir/ammp.out 2> $dir/ammp.err
-echo "Taken:" > $out	
+echo "Taken:" > $out
+echo -e "\n\t" >> $out
 grep "sim_IPC" $dir/$tasca >> $out
 grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
 
@@ -42,7 +43,8 @@ sim-outorder -fastfwd 50000000 \
 -$memWidth \
 -$memLat \
 -redir:sim $dir/$tasca /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > $dir/cook_log.out 2> $dir/cook_log.err
-echo "Taken:" > $out	
+echo "Taken:" > $out
+echo -e "\n\t" >> $out
 grep "sim_IPC" $dir/$tasca >> $out
 grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
 
@@ -58,7 +60,8 @@ sim-outorder -fastfwd 50000000 \
 -$memWidth \
 -$memLat \
 -redir:sim $dir/$tasca /lib/specs2000/equake/exe/equake.exe < inp.in > $dir/inp.out 2> $dir/inp.err	
-echo "Taken:" > $out	
+echo "Taken:" > $out
+echo -e "\n\t" >> $out
 grep "sim_IPC" $dir/$tasca >> $out
 grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
 
@@ -74,7 +77,8 @@ sim-outorder -fastfwd 50000000 \
 -$memWidth \
 -$memLat \
 -redir:sim $dir/$tasca /lib/specs2000/gap/exe/gap.exe -l /usr/lib/specs2000/gap/data/all -q -m 192M < ref.in > $dir/ref.out 2> $dir/ref.err	
-echo "Taken:" > $out	
+echo "Taken:" > $out
+echo -e "\n\t" >> $out
 grep "sim_IPC" $dir/$tasca >> $out
 grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
 
@@ -90,6 +94,7 @@ sim-outorder -fastfwd 50000000 \
 -$memWidth \
 -$memLat \
 -redir:sim $dir/$tasca /lib/specs2000/mesa/exe/mesa.exe -frames 1000 -meshfile mesa.in -ppmfile mesa.ppm
-echo "Taken:" > $out	
+echo "Taken:" > $out
+echo -e "\n\t" >> $out
 grep "sim_IPC" $dir/$tasca >> $out
 grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out

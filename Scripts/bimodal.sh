@@ -17,6 +17,7 @@ cd $ammp
 	dir=$root"ammp/bimodal"
     out=$dir"/BIMODAL_AMMP.txt"
     echo "BIMODAL:" > $out
+	echo -e "\n\t" >> $out
 	for i in 8 32 128 512 2048
 	do
 		tasca="bimodalAMMP$i.txt"
@@ -38,6 +39,7 @@ cd $ammp
 	dir=$root"eon/bimodal"
     out=$dir"/BIMODAL_EON.txt"
     echo "BIMODAL:" > $out
+	echo -e "\n\t" >> $out
 	for i in 8 32 128 512 2048
 	do
 		tasca="bimodalEON$i.txt"
@@ -57,6 +59,7 @@ cd $ammp
     dir=$root"equake/bimodal"
     out=$dir"/BIMODAL_EQUAKE.txt"
     echo "BIMODAL:" > $out
+	echo -e "\n\t" >> $out
 	for i in 8 32 128 512 2048
 	do
 		tasca="bimodalEQUAKE$i.txt"
@@ -77,6 +80,7 @@ cd $ammp
 	dir=$root"gap/bimodal"
     out=$dir"/BIMODAL_GAP.txt"
     echo "BIMODAL:" > $out
+	echo -e "\n\t" >> $out
 	for i in 8 32 128 512 2048
 	do
 		tasca="bimodalGAP$i.txt"
@@ -97,6 +101,7 @@ cd $ammp
 	dir=$root"mesa/bimodal"
     out=$dir"/BIMODAL_MESA.txt"
     echo "BIMODAL:" > $out
+	echo -e "\n\t" >> $out
 	for i in 8 32 128 512 2048
 	do
 		tasca="bimodalMESA$i.txt"

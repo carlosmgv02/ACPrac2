@@ -92,13 +92,13 @@ function createDirectories
 	createFolders $dir/"gap"
 	createFolders $dir/"mesa"
 }
-createDirectories
+#createDirectories
 cd "/home/milax/Documents/GitHub/ACPrac2/Scripts"
 
-./taken.sh
-./nottaken.sh
-./perfect.sh
-./bimodal.sh
+#./taken.sh
+#./nottaken.sh
+#./perfect.sh
+#./bimodal.sh
 ./gshare.sh
 ./gag.sh
 ./pag.sh

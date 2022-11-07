@@ -11,7 +11,7 @@ mesa="/lib/specs2000/mesa/data/ref"
 memWidth="mem:width 32"
 memLat="mem:lat 300 2"
 
-pred="gag"
+pred="2lev"
 
 array=(3 5 7 9 11)
 
@@ -19,6 +19,7 @@ cd $ammp
 	dir=$root"ammp/gag"
     out=$dir"/GAG_AMMP.txt"
     echo "GAG:" > $out
+	echo -e "\n\t" >> $out
     j=0
 	for i in 8 32 128 512 2048
 	do
@@ -43,6 +44,8 @@ cd $ammp
 	dir=$root"eon/gag"
     out=$dir"/GAG_EON.txt"
     echo "GAG:" > $out
+	echo -e "\n\t" >> $out
+
     j=0
 	for i in 8 32 128 512 2048
 	do
@@ -65,6 +68,8 @@ cd $ammp
     dir=$root"equake/gag"
     out=$dir"/GAG_EQUAKE.txt"
     echo "GAG:" > $out
+	echo -e "\n\t" >> $out
+
     j=0
 	for i in 8 32 128 512 2048
 	do
@@ -88,6 +93,8 @@ cd $ammp
 	dir=$root"gap/gag"
     out=$dir"/GAG_GAP.txt"
     echo "GAG:" > $out
+	echo -e "\n\t" >> $out
+
     j=0
 	for i in 8 32 128 512 2048
 	do
@@ -111,6 +118,8 @@ cd $ammp
 	dir=$root"mesa/gag"
     out=$dir"/GAG_MESA.txt"
     echo "GAG:" > $out
+	echo -e "\n\t" >> $out
+
     j=0
 	for i in 8 32 128 512 2048
 	do  

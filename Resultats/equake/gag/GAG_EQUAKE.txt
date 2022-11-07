@@ -1,2 +1,6 @@
 GAG:
 sim_IPC                      1.2714 # instructions per cycle
+sim_IPC                      1.2440 # instructions per cycle
+sim_IPC                      1.3040 # instructions per cycle
+sim_IPC                      1.3800 # instructions per cycle
+sim_IPC                      1.4245 # instructions per cycle

@@ -11,7 +11,7 @@ mesa="/lib/specs2000/mesa/data/ref"
 memWidth="mem:width 32"
 memLat="mem:lat 300 2"
 
-pred="pag"
+pred="2lev"
 
 array=(2 4 6 8 10 11)
 arrayX=(4 16 64  256 1024 2048)
@@ -22,8 +22,8 @@ cd $ammp
 	dir=$root"ammp/pag"
     out=$dir"/PAG_AMMP.txt"
     echo "PAG:" > $out
+	echo -e "\n\t" >> $out
     j=0
-
 	for i in 4 8 16 32 64 32
 	do
         let log=${array[$j]}
@@ -39,6 +39,8 @@ cd $ammp
 		-$memWidth \
 		-$memLat \
 		-redir:sim $dir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $dir/ammp.out 2> $dir/ammp.err
+		
+		
         grep "sim_IPC" $dir/$tasca >> $out
         grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
     done
@@ -49,6 +51,7 @@ cd $ammp
 	dir=$root"eon/pag"
     out=$dir"/PAG_EON.txt"
     echo "PAG:" > $out
+	echo -e "\n\t" >> $out
     j=0
  
 	for i in 4 8 16 32 64 32
@@ -74,6 +77,7 @@ cd $ammp
     dir=$root"equake/pag"
     out=$dir"/PAG_EQUAKE.txt"
     echo "PAG:" > $out
+	echo -e "\n\t" >> $out
     j=0
 
 	for i in 4 8 16 32 64 32
@@ -100,6 +104,7 @@ cd $ammp
 	dir=$root"gap/pag"
     out=$dir"/PAG_GAP.txt"
     echo "PAG:" > $out
+	echo -e "\n\t" >> $out
     j=0
 
 	for i in 4 8 16 32 64 32
@@ -126,6 +131,7 @@ cd $ammp
 	dir=$root"mesa/pag"
     out=$dir"/PAG_MESA.txt"
     echo "PAG:" > $out
+	echo -e "\n\t" >> $out
     j=0
 
 	for i in 4 8 16 32 64 32

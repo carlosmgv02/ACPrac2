@@ -8,7 +8,7 @@ of SimpleScalar, LLC (info@simplescalar.com).
 warning: section `.comment' ignored...
 sim: command line: sim-outorder -fastfwd 50000000 -max:inst 50000000 -bpred 2lev -bpred:2lev 1 128 7 1 -mem:width 32 -mem:lat 300 2 -redir:sim /home/milax/Documents/GitHub/ACPrac2/Resultats/ammp/gshare/gshareAMMP128.txt /lib/specs2000/ammp/exe/ammp.exe 
 
-sim: simulation started @ Mon Nov  7 20:32:20 2022, options follow:
+sim: simulation started @ Mon Nov  7 21:01:22 2022, options follow:
 
 sim-outorder: This simulator implements a very detailed out-of-order issue
 superscalar processor with a two-level memory system and speculative

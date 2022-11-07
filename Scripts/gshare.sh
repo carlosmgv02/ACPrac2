@@ -11,7 +11,7 @@ mesa="/lib/specs2000/mesa/data/ref"
 memWidth="mem:width 32"
 memLat="mem:lat 300 2"
 
-pred="gshare"
+pred="2lev"
 
 array=(3 5 7 9 11)
 
@@ -19,6 +19,7 @@ cd $ammp
 	dir=$root"ammp/gshare"
     out=$dir"/GSHARE_AMMP.txt"
     echo "GSHARE:" > $out
+	echo -e "\n\t" >> $out
     j=0
 	for i in 8 32 128 512 2048
 	do
@@ -43,6 +44,7 @@ cd $ammp
 	dir=$root"eon/gshare"
     out=$dir"/GSHARE_EON.txt"
     echo "GSHARE:" > $out
+	echo -e "\n\t" >> $out
     j=0
 	for i in 8 32 128 512 2048
 	do
@@ -65,6 +67,7 @@ cd $ammp
     dir=$root"equake/gshare"
     out=$dir"/GSHARE_EQUAKE.txt"
     echo "GSHARE:" > $out
+	echo -e "\n\t" >> $out
     j=0
 	for i in 8 32 128 512 2048
 	do
@@ -88,6 +91,7 @@ cd $ammp
 	dir=$root"gap/gshare"
     out=$dir"/GSHARE_GAP.txt"
     echo "GSHARE:" > $out
+	echo -e "\n\t" >> $out
     j=0
 	for i in 8 32 128 512 2048
 	do
@@ -111,6 +115,7 @@ cd $ammp
 	dir=$root"mesa/gshare"
     out=$dir"/GSHARE_MESA.txt"
     echo "GSHARE:" > $out
+	echo -e "\n\t" >> $out
     j=0
 	for i in 8 32 128 512 2048
 	do  
