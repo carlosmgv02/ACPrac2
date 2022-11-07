@@ -1,0 +1,6 @@
+GAG:
+sim_IPC                      0.0726 # instructions per cycle
+sim_IPC                      0.0726 # instructions per cycle
+sim_IPC                      0.0724 # instructions per cycle
+sim_IPC                      0.0725 # instructions per cycle
+sim_IPC                      0.0708 # instructions per cycle

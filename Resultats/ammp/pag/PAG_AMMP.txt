@@ -1,0 +1,7 @@
+PAG:
+sim_IPC                      0.0727 # instructions per cycle
+sim_IPC                      0.0728 # instructions per cycle
+sim_IPC                      0.0729 # instructions per cycle
+sim_IPC                      0.0730 # instructions per cycle
+sim_IPC                      0.0731 # instructions per cycle
+sim_IPC                      0.0731 # instructions per cycle

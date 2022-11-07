@@ -94,23 +94,11 @@ function createDirectories
 }
 createDirectories
 cd "/home/milax/Documents/GitHub/ACPrac2/Scripts"
+
 ./taken.sh
-./bimodal.sh
-./perfect.sh
-
-
-<<com
-:'
-
-
 ./nottaken.sh
 ./perfect.sh
 ./bimodal.sh
 ./gshare.sh
 ./gag.sh
 ./pag.sh
-
-.
-'
-com
-

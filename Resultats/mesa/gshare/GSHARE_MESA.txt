@@ -1,0 +1,6 @@
+GSHARE:
+sim_IPC                      1.4726 # instructions per cycle
+sim_IPC                      1.4526 # instructions per cycle
+sim_IPC                      1.6251 # instructions per cycle
+sim_IPC                      1.8394 # instructions per cycle
+sim_IPC                      1.9844 # instructions per cycle

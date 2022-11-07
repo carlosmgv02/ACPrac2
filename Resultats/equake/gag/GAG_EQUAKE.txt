@@ -1,0 +1,2 @@
+GAG:
+sim_IPC                      1.2714 # instructions per cycle

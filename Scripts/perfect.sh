@@ -2,11 +2,13 @@
 
 #! /bin/bash
 root="/home/milax/Documents/GitHub/ACPrac2/Resultats/"
+
 ammp="/lib/specs2000/ammp/data/ref"
 eon="/lib/specs2000/eon/data/ref"
 equake="/lib/specs2000/equake/data/ref"
 gap="/lib/specs2000/gap/data/ref"
 mesa="/lib/specs2000/mesa/data/ref"
+
 memWidth="mem:width 32"
 memLat="mem:lat 300 2"
 
@@ -24,7 +26,7 @@ sim-outorder -fastfwd 50000000 \
 -bpred perfect \
 -$memWidth \
 -$memLat \
--redir:sim $dir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $dir/ammp.out 		2> $dir/ammp.err
+-redir:sim $dir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $dir/ammp.out 2> $dir/ammp.err
 echo "perfect:" > $out	
 grep "sim_IPC" $dir/$tasca >> $out
 grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
@@ -41,7 +43,8 @@ sim-outorder -fastfwd 50000000 \
 -bpred perfect \
 -$memWidth \
 -$memLat \
--redir:sim $dir/$tasca /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > $dir/cook_log.out 2> $dir/cook_log.err	done
+-redir:sim $dir/$tasca /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > $dir/cook_log.out 2> $dir/cook_log.err
+
 echo "perfect:" > $out	
 grep "sim_IPC" $dir/$tasca >> $out
 grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out

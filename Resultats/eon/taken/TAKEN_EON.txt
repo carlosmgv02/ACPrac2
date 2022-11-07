@@ -1,3 +1,0 @@
-Taken:
-sim_IPC                <error: divide by zero> # instructions per cycle
-bpred_taken.bpred_dir_rate <error: divide by zero> # branch direction-prediction rate (i.e., all-hits/updates)
