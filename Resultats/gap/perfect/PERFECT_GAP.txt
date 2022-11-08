@@ -1,0 +1,4 @@
+perfect:
+
+	
+sim_IPC                      2.1835 # instructions per cycle
