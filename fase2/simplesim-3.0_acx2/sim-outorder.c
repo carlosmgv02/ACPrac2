@@ -977,6 +977,18 @@ sim_check_options(struct opt_odb_t *odb,        /* options database */
 			  /* btb assoc */btb_config[1],
 			  /* ret-addr stack size */ras_size);
     }
+    else if (!mystricmp(pred_type, "cascade")){
+      pred = bpred_create(BpredCascade,
+			  /* bimod table size */bimod_config[0],
+			  /* l1 size */twolev_config[0],
+			  /* l2 size */twolev_config[1],
+			  /* meta table size */0,
+			  /* history reg size */twolev_config[2],
+			  /* history xor address */twolev_config[3],
+			  /* btb sets */btb_config[0],
+			  /* btb assoc */btb_config[1],
+			  /* ret-addr stack size */ras_size);
+    }
   else
     fatal("cannot parse predictor type `%s'", pred_type);
 
