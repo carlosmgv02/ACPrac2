@@ -95,10 +95,10 @@ function createDirectories
 #createDirectories
 cd "$HOME/Documents/GitHub/ACPrac2/Scripts"
 
-./taken.sh
-./notTaken.sh
-./perfect.sh
-./bimodal.sh
-./gshare.sh
-./gag.sh
+#./taken.sh
+#./notTaken.sh
+#./perfect.sh
+#./bimodal.sh
+#./gshare.sh
+#./gag.sh
 ./pag.sh
