@@ -82,6 +82,7 @@ bpred_create(enum bpred_class class,	/* type of predictor to create */
 
   pred->class = class;
 
+
   switch (class) {
   case BPredComb:
     /* bimodal component */
@@ -95,6 +96,17 @@ bpred_create(enum bpred_class class,	/* type of predictor to create */
     /* metapredictor component */
     pred->dirpred.meta = 
       bpred_dir_create(BPred2bit, meta_size, 0, 0, 0);
+
+    break;
+  
+  case BpredCascade:
+    /* bimodal component */
+    pred->dirpred.bimod = 
+      bpred_dir_create(BPred2bit, bimod_size, 0, 0, 0);
+
+    /* 2-level component */
+    pred->dirpred.twolev = 
+      bpred_dir_create(BPred2Level, l1size, l2size, shift_width, xor);
 
     break;
 
@@ -120,6 +132,7 @@ bpred_create(enum bpred_class class,	/* type of predictor to create */
   /* allocate ret-addr stack */
   switch (class) {
   case BPredComb:
+  case BpredCascade:
   case BPred2Level:
   case BPred2bit:
     {
@@ -223,11 +236,12 @@ bpred_dir_create (
 	fatal("cannot allocate second level table");
 
       /* initialize counters to weakly this-or-that */
-      flipflop = 1;
+      //flipflop = 1;   //s'ha d'inicialitzar la taula a 4
       for (cnt = 0; cnt < l2size; cnt++)
 	{
-	  pred_dir->config.two.l2table[cnt] = flipflop;
-	  flipflop = 3 - flipflop;
+    pred_dir->config.two.l2table[cnt] = 4;
+	  //pred_dir->config.two.l2table[cnt] = flipflop;
+	  //flipflop = 3 - flipflop;
 	}
 
       break;
@@ -310,6 +324,14 @@ bpred_config(struct bpred_t *pred,	/* branch predictor instance */
 	    pred->btb.sets, pred->btb.assoc);
     fprintf(stream, "ret_stack: %d entries", pred->retstack.size);
     break;
+  
+  case BpredCascade:
+    bpred_dir_config (pred->dirpred.bimod, "bimod", stream);
+    bpred_dir_config (pred->dirpred.twolev, "2lev", stream);
+    fprintf(stream, "btb: %d sets x %d associativity", 
+	    pred->btb.sets, pred->btb.assoc);
+    fprintf(stream, "ret_stack: %d entries", pred->retstack.size);
+    break;
 
   case BPred2Level:
     bpred_dir_config (pred->dirpred.twolev, "2lev", stream);
@@ -361,6 +383,9 @@ bpred_reg_stats(struct bpred_t *pred,	/* branch predictor instance */
     case BPredComb:
       name = "bpred_comb";
       break;
+    case BpredCascade:
+      name = "bpred_cascade";
+      break;
     case BPred2Level:
       name = "bpred_2lev";
       break;
@@ -391,7 +416,7 @@ bpred_reg_stats(struct bpred_t *pred,	/* branch predictor instance */
 		   "total number of direction-predicted hits "
 		   "(includes addr-hits)", 
 		   &pred->dir_hits, 0, NULL);
-  if (pred->class == BPredComb)
+  if (pred->class == BPredComb || pred->class == BpredCascade)
     {
       sprintf(buf, "%s.used_bimod", name);
       stat_reg_counter(sdb, buf, 
@@ -402,6 +427,7 @@ bpred_reg_stats(struct bpred_t *pred,	/* branch predictor instance */
 		       "total number of 2-level predictions used", 
 		       &pred->used_2lev, 0, NULL);
     }
+
   sprintf(buf, "%s.misses", name);
   stat_reg_counter(sdb, buf, "total number of misses", &pred->misses, 0, NULL);
   sprintf(buf, "%s.jr_hits", name);

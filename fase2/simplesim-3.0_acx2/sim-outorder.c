@@ -982,7 +982,7 @@ sim_check_options(struct opt_odb_t *odb,        /* options database */
 			  /* bimod table size */bimod_config[0],
 			  /* l1 size */twolev_config[0],
 			  /* l2 size */twolev_config[1],
-			  /* meta table size */0,
+			  /* meta table size */0,                         //treiem el gselect
 			  /* history reg size */twolev_config[2],
 			  /* history xor address */twolev_config[3],
 			  /* btb sets */btb_config[0],
