@@ -84,7 +84,7 @@ function createFolders
 
 function createDirectories
 {
-	dir="/home/milax/Documents/GitHub/ACPrac2/Resultats"
+	dir="$HOME/Documents/GitHub/ACPrac2/Resultats"
 
 	createFolders $dir/"ammp"
 	createFolders $dir/"eon"
@@ -93,12 +93,12 @@ function createDirectories
 	createFolders $dir/"mesa"
 }
 #createDirectories
-cd "/home/milax/Documents/GitHub/ACPrac2/Scripts"
+cd "$HOME/Documents/GitHub/ACPrac2/Scripts"
 
 ./taken.sh
 ./notTaken.sh
 ./perfect.sh
 ./bimodal.sh
-#./gshare.sh
-#./gag.sh
-#./pag.sh
+./gshare.sh
+./gag.sh
+./pag.sh

@@ -1,5 +1,5 @@
 Taken:
 
 	
-sim_IPC                      0.9058 # instructions per cycle
-bpred_taken.bpred_dir_rate    0.2319 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      0.8982 # instructions per cycle
+bpred_taken.bpred_dir_rate    0.2317 # branch direction-prediction rate (i.e., all-hits/updates)

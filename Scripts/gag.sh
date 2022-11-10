@@ -1,6 +1,6 @@
 #! /bin/bash
 
-root="/home/milax/Documents/GitHub/ACPrac2/Resultats/"
+root="$HOME/Documents/GitHub/ACPrac2/Resultats/"
 
 ammp="/lib/specs2000/ammp/data/ref"
 eon="/lib/specs2000/eon/data/ref"
