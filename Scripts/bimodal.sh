@@ -22,8 +22,8 @@ cd $ammp
 	do
 		tasca="bimodalAMMP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \
@@ -44,8 +44,8 @@ cd $ammp
 	do
 		tasca="bimodalEON$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \
@@ -64,8 +64,8 @@ cd $ammp
 	do
 		tasca="bimodalEQUAKE$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \
@@ -85,8 +85,8 @@ cd $ammp
 	do
 		tasca="bimodalGAP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \
@@ -106,8 +106,8 @@ cd $ammp
 	do
 		tasca="bimodalMESA$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred bimod \
 		-bpred:bimod $i \
 		-$memWidth \

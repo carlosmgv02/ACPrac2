@@ -20,8 +20,8 @@ pred="nottaken"
 	out=$dir"/NOTTAKEN_AMMP.txt"
 	tasca="notTakenAMMP.txt"
 	echo "processing "$tasca
-	sim-outorder -fastfwd 50000000 \
-	-max:inst 50000000 \
+	sim-outorder -fastfwd 100000000 \
+	-max:inst 100000000 \
 	-bpred nottaken \
 	-$memWidth \
 	-$memLat \
@@ -38,8 +38,8 @@ pred="nottaken"
 	out=$dir"/NOTTAKEN_EON.txt"
 	tasca="notTakenEON.txt"
 	echo "processing "$tasca
-	sim-outorder -fastfwd 50000000 \
-	-max:inst 50000000 \
+	sim-outorder -fastfwd 100000000 \
+	-max:inst 100000000 \
 	-bpred nottaken \
 	-$memWidth \
 	-$memLat \
@@ -55,8 +55,8 @@ pred="nottaken"
 	out=$dir"/NOTTAKEN_EQUAKE.txt"
 	tasca="notTakenEQUAKE.txt"
 	echo "processing "$tasca
-	sim-outorder -fastfwd 50000000 \
-	-max:inst 50000000 \
+	sim-outorder -fastfwd 100000000 \
+	-max:inst 100000000 \
 	-bpred nottaken \
 	-$memWidth \
 	-$memLat \
@@ -73,8 +73,8 @@ pred="nottaken"
 	out=$dir"/NOTTAKEN_GAP.txt"
 	tasca="notTakenGAP.txt"
 	echo "processing "$tasca
-	sim-outorder -fastfwd 50000000 \
-	-max:inst 50000000 \
+	sim-outorder -fastfwd 100000000 \
+	-max:inst 100000000 \
 	-bpred nottaken \
 	-$memWidth \
 	-$memLat \
@@ -90,8 +90,8 @@ pred="nottaken"
 	out=$dir"/NOTTAKEN_MESA.txt"
 	tasca="notTakenMESA.txt"
 	echo "processing "$tasca
-	sim-outorder -fastfwd 50000000 \
-	-max:inst 50000000 \
+	sim-outorder -fastfwd 100000000 \
+	-max:inst 100000000 \
 	-bpred nottaken \
 	-$memWidth \
 	-$memLat \

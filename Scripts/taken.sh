@@ -19,8 +19,8 @@ dir=$root"ammp/taken"
 out=$dir"/TAKEN_AMMP.txt"
 tasca="takenAMMP.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred taken \
 -$memWidth \
 -$memLat \
@@ -37,8 +37,8 @@ dir=$root"eon/taken"
 out=$dir"/TAKEN_EON.txt"
 tasca="takenEON.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred taken \
 -$memWidth \
 -$memLat \
@@ -54,8 +54,8 @@ dir=$root"equake/taken"
 out=$dir"/TAKEN_EQUAKE.txt"
 tasca="takenEQUAKE.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred taken \
 -$memWidth \
 -$memLat \
@@ -71,8 +71,8 @@ dir=$root"gap/taken"
 out=$dir"/TAKEN_GAP.txt"
 tasca="takenGAP.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred taken \
 -$memWidth \
 -$memLat \
@@ -88,8 +88,8 @@ dir=$root"mesa/taken"
 out=$dir"/TAKEN_MESA.txt"
 tasca="takenMESA.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred taken \
 -$memWidth \
 -$memLat \

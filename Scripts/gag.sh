@@ -27,8 +27,8 @@ cd $ammp
 	    ((j++))
 		tasca="gagAMMP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 0 \
 		-$memWidth \
@@ -53,8 +53,8 @@ cd $ammp
 	    ((j++))
 		tasca="gagEON$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 0 \
 		-$memWidth \
@@ -77,8 +77,8 @@ cd $ammp
 	    ((j++))
 		tasca="gagEQUAKE$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 0 \
 		-$memWidth \
@@ -102,8 +102,8 @@ cd $ammp
 	    ((j++))
 		tasca="gagGAP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 0 \
 		-$memWidth \
@@ -127,8 +127,8 @@ cd $ammp
 	    ((j++))
 		tasca="gagMESA$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 0 \
 		-$memWidth \

@@ -27,8 +27,8 @@ cd $ammp
 	    ((j++))
 		tasca="gshareAMMP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 1 \
 		-$memWidth \
@@ -52,8 +52,8 @@ cd $ammp
 	    ((j++))
 		tasca="gshareEON$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 1 \
 		-$memWidth \
@@ -75,8 +75,8 @@ cd $ammp
 	    ((j++))
 		tasca="gshareEQUAKE$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 1 \
 		-$memWidth \
@@ -99,8 +99,8 @@ cd $ammp
 	    ((j++))
 		tasca="gshareGAP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 1 \
 		-$memWidth \
@@ -123,8 +123,8 @@ cd $ammp
 	    ((j++))
 		tasca="gshareMESA$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev 1 $i $x 1 \
 		-$memWidth \

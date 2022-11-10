@@ -32,8 +32,8 @@ cd $ammp
  
 		tasca="pagAMMP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev $i $x $log 0 \
 		-$memWidth \
@@ -62,8 +62,8 @@ cd $ammp
 
 		tasca="pagEON$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev $i $x $log 0 \
 		-$memWidth \
@@ -88,8 +88,8 @@ cd $ammp
   
 		tasca="pagEQUAKE$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev $i $x $log 0 \
 		-$memWidth \
@@ -115,8 +115,8 @@ cd $ammp
 
 		tasca="pagGAP$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev $i $x $log 0 \
 		-$memWidth \
@@ -142,8 +142,8 @@ cd $ammp
 
 		tasca="pagMESA$i.txt"
 		echo "processing "$tasca
-		sim-outorder -fastfwd 50000000 \
-		-max:inst 50000000 \
+		sim-outorder -fastfwd 100000000 \
+		-max:inst 100000000 \
 		-bpred 2lev \
 		-bpred:2lev $i $x $log 0 \
 		-$memWidth \

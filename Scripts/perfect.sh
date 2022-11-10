@@ -21,8 +21,8 @@ dir=$root"ammp/perfect"
 out=$dir"/PERFECT_AMMP.txt"
 tasca="perfectAMMP.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred perfect \
 -$memWidth \
 -$memLat \
@@ -39,8 +39,8 @@ dir=$root"eon/perfect"
 out=$dir"/PERFECT_EON.txt"
 tasca="perfectEON.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred perfect \
 -$memWidth \
 -$memLat \
@@ -57,8 +57,8 @@ dir=$root"equake/perfect"
 out=$dir"/PERFECT_EQUAKE.txt"
 tasca="perfectEQUAKE.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred perfect \
 -$memWidth \
 -$memLat \
@@ -74,8 +74,8 @@ dir=$root"gap/perfect"
 out=$dir"/PERFECT_GAP.txt"
 tasca="perfectGAP.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred perfect \
 -$memWidth \
 -$memLat \
@@ -91,8 +91,8 @@ dir=$root"mesa/perfect"
 out=$dir"/PERFECT_MESA.txt"
 tasca="perfectMESA.txt"
 echo "processing "$tasca
-sim-outorder -fastfwd 50000000 \
--max:inst 50000000 \
+sim-outorder -fastfwd 100000000 \
+-max:inst 100000000 \
 -bpred perfect \
 -$memWidth \
 -$memLat \
