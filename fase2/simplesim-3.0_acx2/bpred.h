@@ -102,7 +102,7 @@ enum bpred_class {
   BPredComb,                    /* combined predictor (McFarling) */
   BPred2Level,			/* 2-level correlating pred w/2-bit counters */
   BPred2bit,			/* 2-bit saturating cntr pred (dir mapped) */
-  BpredCascade,  /*predictor de cascada que implementem */
+  BpredCascade,  /*CASCADE PREDICTOR*/
   BPredTaken,			/* static predict taken */
   BPredNotTaken,		/* static predict not taken */
   BPred_NUM
@@ -123,7 +123,7 @@ struct bpred_dir_t {
     struct {
       unsigned int size;	/* number of entries in direct-mapped table */
       unsigned char *table;	/* prediction state table */
-    } bimod;
+    } bimod;  //bimodal
     struct {
       int l1size;		/* level-1 size, number of history regs */
       int l2size;		/* level-2 size, number of pred states */
@@ -131,7 +131,7 @@ struct bpred_dir_t {
       int xor;			/* history xor address flag */
       int *shiftregs;		/* level-1 history table */
       unsigned char *l2table;	/* level-2 prediction state table */
-    } two;
+    } two;  //g share
   } config;
 };
 
