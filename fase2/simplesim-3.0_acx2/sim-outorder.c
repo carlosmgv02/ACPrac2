@@ -674,12 +674,6 @@ sim_reg_options(struct opt_odb_t *odb)
 		   /* default */comb_config,
 		   /* print */TRUE, /* format */NULL, /* !accrue */FALSE);
     
-  opt_reg_int_list(odb, "-bpred:cascade",                             //modificat
-		   "gshare )",
-		   comb_config, comb_nelt, &comb_nelt,
-		   /* default */comb_config,
-		   /* print */TRUE, /* format */NULL, /* !accrue */FALSE);
-
 
   opt_reg_int(odb, "-bpred:ras",
               "return address stack size (0 for no return stack)",
