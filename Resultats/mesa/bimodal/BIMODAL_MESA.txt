@@ -1,13 +1,13 @@
 BIMODAL:
 
 	
-sim_IPC                      1.5207 # instructions per cycle
+sim_IPC                      1.5220 # instructions per cycle
 bpred_bimod.bpred_dir_rate    0.7533 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.5937 # instructions per cycle
-bpred_bimod.bpred_dir_rate    0.8298 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.7288 # instructions per cycle
-bpred_bimod.bpred_dir_rate    0.8864 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.9258 # instructions per cycle
-bpred_bimod.bpred_dir_rate    0.9604 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.9554 # instructions per cycle
-bpred_bimod.bpred_dir_rate    0.9657 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.5951 # instructions per cycle
+bpred_bimod.bpred_dir_rate    0.8296 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.7276 # instructions per cycle
+bpred_bimod.bpred_dir_rate    0.8848 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.9291 # instructions per cycle
+bpred_bimod.bpred_dir_rate    0.9608 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.9588 # instructions per cycle
+bpred_bimod.bpred_dir_rate    0.9661 # branch direction-prediction rate (i.e., all-hits/updates)

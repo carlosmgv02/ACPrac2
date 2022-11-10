@@ -1,13 +1,13 @@
 GAG:
 
 	
-sim_IPC                      0.0726 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.6396 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      0.0726 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.6550 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      0.0724 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.6675 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      0.0725 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.6804 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      0.0708 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.6856 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      0.0950 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.6632 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      0.0951 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.6830 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      0.0951 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.6968 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      0.0954 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.7107 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      0.0932 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.7173 # branch direction-prediction rate (i.e., all-hits/updates)

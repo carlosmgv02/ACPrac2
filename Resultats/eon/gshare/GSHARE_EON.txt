@@ -1,13 +1,13 @@
 GSHARE:
 
 	
-sim_IPC                      1.1788 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.7647 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.1982 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.7780 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.2420 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.8472 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.3105 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.9261 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.3592 # instructions per cycle
-bpred_2lev.bpred_dir_rate    0.9716 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.1793 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.7630 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.1926 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.7690 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.2428 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.8426 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.3173 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.9255 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.3642 # instructions per cycle
+bpred_2lev.bpred_dir_rate    0.9706 # branch direction-prediction rate (i.e., all-hits/updates)

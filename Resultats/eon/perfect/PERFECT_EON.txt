@@ -1,4 +1,4 @@
 perfect:
 
 	
-sim_IPC                      1.3809 # instructions per cycle
+sim_IPC                      1.3860 # instructions per cycle

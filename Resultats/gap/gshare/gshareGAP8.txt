@@ -6,9 +6,9 @@ entity, or for any commercial purpose, without the prior written permission
 of SimpleScalar, LLC (info@simplescalar.com).
 
 warning: section `.comment' ignored...
-sim: command line: sim-outorder -fastfwd 50000000 -max:inst 50000000 -bpred 2lev -bpred:2lev 1 8 3 1 -mem:width 32 -mem:lat 300 2 -redir:sim /home/milax/Documents/GitHub/ACPrac2/Resultats/gap/gshare/gshareGAP8.txt /lib/specs2000/gap/exe/gap.exe -l /usr/lib/specs2000/gap/data/all -q -m 192M 
+sim: command line: /Users/deim/Downloads/simplesim-3.0_acx2/sim-outorder -fastfwd 100000000 -max:inst 100000000 -bpred 2lev -bpred:2lev 1 8 3 1 -mem:width 32 -mem:lat 300 2 -redir:sim /Users/deim/Documents/GitHub/ACPrac2/Resultats/gap/gshare/gshareGAP8.txt /Users/deim/Documents/lib/specs2000/gap/exe/gap.exe -l /usr/Users/deim/Documents/lib/specs2000/gap/data/all -q -m 192M 
 
-sim: simulation started @ Mon Nov  7 22:12:22 2022, options follow:
+sim: simulation started @ Thu Nov 10 11:48:48 2022, options follow:
 
 sim-outorder: This simulator implements a very detailed out-of-order issue
 superscalar processor with a two-level memory system and speculative
@@ -24,11 +24,11 @@ latency of all pipeline operations.
 -seed                       1 # random number generator seed (0 for timer seed)
 # -q                    false # initialize and terminate immediately
 # -chkpt               <null> # restore EIO trace execution from <fname>
-# -redir:sim     /home/milax/Documents/GitHub/ACPrac2/Resultats/gap/gshare/gshareGAP8.txt # redirect simulator output to file (non-interactive only)
+# -redir:sim     /Users/deim/Documents/GitHub/ACPrac2/Resultats/gap/gshare/gshareGAP8.txt # redirect simulator output to file (non-interactive only)
 # -redir:prog          <null> # redirect simulated program output to file
 -nice                       0 # simulator scheduling priority
--max:inst            50000000 # maximum number of inst's to execute
--fastfwd             50000000 # number of insts skipped before timing starts
+-max:inst           100000000 # maximum number of inst's to execute
+-fastfwd            100000000 # number of insts skipped before timing starts
 # -ptrace              <null> # generate pipetrace, i.e., <fname|stdout|stderr> <range>
 -fetch:ifqsize              4 # instruction fetch queue size (in insts)
 -fetch:mplat                3 # extra branch mis-prediction latency
@@ -54,7 +54,242 @@ latency of all pipeline operations.
 -cache:il1       il1:512:32:1:l # l1 inst cache config, i.e., {<config>|dl1|dl2|none}
 -cache:il1lat               1 # l1 instruction cache hit latency (in cycles)
 -cache:il2                dl2 # l2 instruction cache config, i.e., {<config>|dl2|none}
--cache:il2lat               6 # l2 instruction cache hit latency (in cycles)
+-cache:il2lat               6 # l2 instrError, Variable: 'List' must have a value
+Error, Variable: 'Factorial' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Binomial' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Bell' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'ForAll' must have a value
+Error, Variable: 'Stirling1' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'ForAll' must have a value
+Error, Variable: 'Stirling2' must have a value
+Error, Variable: 'Combinations' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Combinations' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Combinations' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Combinations' must have a value
+Error, Variable: 'Combinations' must have a value
+Error, Variable: 'Combinations' must have a value
+Error, Variable: 'Combinations' must have a value
+Error, Variable: 'Combinations' must have a value
+Error, Variable: 'NrCombinations' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrCombinations' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrCombinations' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrCombinations' must have a value
+Error, Variable: 'NrCombinations' must have a value
+Error, Variable: 'NrCombinations' must have a value
+Error, Variable: 'NrCombinations' must have a value
+Error, Variable: 'Arrangements' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Arrangements' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Arrangements' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Arrangements' must have a value
+Error, Variable: 'Arrangements' must have a value
+Error, Variable: 'Arrangements' must have a value
+Error, Variable: 'Arrangements' must have a value
+Error, Variable: 'NrArrangements' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrArrangements' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrArrangements' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrArrangements' must have a value
+Error, Variable: 'NrArrangements' must have a value
+Error, Variable: 'NrArrangements' must have a value
+Error, Variable: 'NrArrangements' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'UnorderedTuples' must have a value
+Error, Variable: 'UnorderedTuples' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrUnorderedTuples' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Tuples' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrTuples' must have a value
+Error, Variable: 'PermutationsList' must have a value
+Error, Variable: 'PermutationsList' must have a value
+Error, Variable: 'PermutationsList' must have a value
+Error, Variable: 'PermutationsList' must have a value
+Error, Variable: 'PermutationsList' must have a value
+Error, Variable: 'NrPermutationsList' must have a value
+Error, Variable: 'NrPermutationsList' must have a value
+Error, Variable: 'NrPermutationsList' must have a value
+Error, Variable: 'NrPermutationsList' must have a value
+Error, Variable: 'NrPermutationsList' must have a value
+Error, Variable: 'Derangements' must have a value
+Error, Variable: 'Derangements' must have a value
+Error, Variable: 'Derangements' must have a value
+Error, Variable: 'Derangements' must have a value
+Error, Variable: 'NrDerangements' must have a value
+Error, Variable: 'NrDerangements' must have a value
+Error, Variable: 'NrDerangements' must have a value
+Error, Variable: 'NrDerangements' must have a value
+Error, Variable: 'Permanent' must have a value
+Error, Variable: 'Permanent' must have a value
+Error, Variable: 'PartitionsSet' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'PartitionsSet' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'PartitionsSet' must have a value
+Error, Variable: 'PartitionsSet' must have a value
+Error, Variable: 'NrPartitionsSet' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrPartitionsSet' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrPartitionsSet' must have a value
+Error, Variable: 'NrPartitionsSet' must have a value
+Error, Variable: 'Partitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Partitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Partitions' must have a value
+Error, Variable: 'Partitions' must have a value
+Error, Variable: 'NrPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrPartitions' must have a value
+Error, Variable: 'NrPartitions' must have a value
+Error, Variable: 'OrderedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'OrderedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'OrderedPartitions' must have a value
+Error, Variable: 'OrderedPartitions' must have a value
+Error, Variable: 'NrOrderedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrOrderedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrOrderedPartitions' must have a value
+Error, Variable: 'NrOrderedPartitions' must have a value
+Error, Variable: 'RestrictedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'RestrictedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'RestrictedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'RestrictedPartitions' must have a value
+Error, Variable: 'RestrictedPartitions' must have a value
+Error, Variable: 'NrRestrictedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrRestrictedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrRestrictedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'NrRestrictedPartitions' must have a value
+Error, Variable: 'NrRestrictedPartitions' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Lucas' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Fibonacci' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Bernoulli' must have a value
+Error, Variable: 'Group' must have a value
+Error, Variable: 'Operation' must have a value
+Error, Variable: 'PermutationMat' must have a value
+Error, Variable: 'PermutationMat' must have a value
+Error, Variable: 'ma' must have a value
+Error, Variable: 'MTXOps' must have a value
+Error, Variable: 'Collected' must have a value
+Error, Variable: 'Tuples' must have a value
+Error, Variable: 'V' must have a value
+Error, Variable: 'RandomList' must have a value
+Error, Variable: 'Operation' must have a value
+Error, Variable: 'Blocks' must have a value
+Error, Variable: 'B' must have a value
+Error, Variable: 'Operation' must have a value
+Error, Variable: 'Blocks' must have a value
+Error, Variable: 'C' must have a value
+Error, Variable: 'Group' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'Subgroup' must have a value
+Error, Variable: 'G' must have a value
+Error, Variable: 'Lattice' must have a value
+Error, Variable: 'L' must have a value
+Error, Variable: 'Sum' must have a value
+Error, Variable: 'n1' must have a value
+Error, Variable: 'Group' must have a value
+Error, Variable: 'List' must have a value
+Error, Variable: 'Group' must have a value
+Error, Variable: 'S_3' must have a value
+Error, Variable: 'Group' must have a value
+Error, Variable: 'Concatenation' must have a value at
+gens[i] := PermList( Concatenation( [ 1 .. first - 1 ], t + (first - 1) ) )
+  ... in
+p_grp( 3, 21 ) called from
+main loop
+Error, Variable: 'S_3' must have a value
+Error, Variable: 'S_4' must have a value
+Error, Variable: 'S_4wrS_4' must have a value
+Error, Variable: 'S_4wrS_4xSy_3_21xS_3wrS_4' must have a value
+Error, Variable: 'GGG' must have a value
+Error, Variable: 'GGG' must have a value
+Error, Variable: 'MedDirectProd' must have a value
+Error, Variable: 'MedDirectProd' must have a value
+Error, Variable: 'AgGroupFpGroup' must have a value
+Error, Variable: 'Product' must have a value
+Error, Variable: 'Group' must have a value
+Error, Variable: 'AgGroupFpGroup' must have a value
+Error, Variable: 'AgGroupFpGroup' must have a value
+Error, Variable: 'G2' must have a value
+Error, Variable: 'G3' must have a value
+Error, Variable: 'G7' must have a value
+Error, Variable: 'G2' must have a value
+Error, Variable: 'G7' must have a value
+Error, Variable: 'IsConsistent' must have a value
+Error, Variable: 'IsConsistent' must have a value
+Error, Variable: 'IsConsistent' must have a value
+Error, Variable: 'G2' must have a value
+Error, Variable: 'G3' must have a value
+Error, Variable: 'G7' must have a value
+Error, Variable: 'G2' must have a value
+Error, Variable: 'G3' must have a value
+Error, Variable: 'G7' must have a value
+Error, Variable: 'IsConsistent' must have a value
+Error, Variable: 'IsConsistent' must have a value
+Error, Variable: 'IsConsistent' must have a value
+Error, Variable: 'G3' must have a value
+Error, Variable: 'G7' must have a value
+Error, Variable: 'G3' must have a value
+Error, Variable: 'G7' must have a value
+Error, Variable: 'IsConsistent' must have a value
+Error, Variable: 'IsConsistent' must have a value
+Error, Variable: 'G3' must have a value
+Error, Variable: 'G7' must have a value
+Error, Variable: 'G3' must have a value
+Error, Variable: 'G7' must have a value
+Error, Variable: 'IsConsistent' must have a value
+Error, Variable: 'IsConsistent' must have a value
+uction cache hit latency (in cycles)
 -cache:flush            false # flush caches on system calls
 -cache:icompress        false # convert 64-bit inst addresses to 32-bit inst equivalents
 -mem:lat         300 2 # memory access latency (<first_chunk> <inter_chunk>)
@@ -129,114 +364,116 @@ latency of all pipeline operations.
 
 
 
-sim: ** fast forwarding 50000000 insts **
+sim: ** fast forwarding 100000000 insts **
 warning: partially supported sigaction() call...
 sim: ** starting performance simulation **
+warning: partially supported sigprocmask() call...
+warning: partially supported sigreturn() call...
 
 sim: ** simulation statistics **
-sim_num_insn               50000000 # total number of instructions committed
-sim_num_refs               37987735 # total number of loads and stores committed
-sim_num_loads              24127344 # total number of loads committed
-sim_num_stores         13860391.0000 # total number of stores committed
-sim_num_branches            2104724 # total number of branches committed
-sim_elapsed_time                 27 # total simulation time in seconds
-sim_inst_rate          1851851.8519 # simulation speed (in insts/sec)
-sim_total_insn             50000031 # total number of instructions executed
-sim_total_refs             37987744 # total number of loads and stores executed
-sim_total_loads            24127349 # total number of loads executed
-sim_total_stores       13860395.0000 # total number of stores executed
-sim_total_branches          2104728 # total number of branches executed
-sim_cycle                  22899305 # total simulation time in cycles
-sim_IPC                      2.1835 # instructions per cycle
-sim_CPI                      0.4580 # cycles per instruction
-sim_exec_BW                  2.1835 # total instructions (mis-spec + committed) per cycle
-sim_IPB                     23.7561 # instruction per branch
-IFQ_count                  91581035 # cumulative IFQ occupancy
-IFQ_fcount                 22895248 # cumulative IFQ full count
-ifq_occupancy                3.9993 # avg IFQ occupancy (insn's)
-ifq_rate                     2.1835 # avg IFQ dispatch rate (insn/cycle)
-ifq_latency                  1.8316 # avg IFQ occupant latency (cycle's)
-ifq_full                     0.9998 # fraction of time (cycle's) IFQ was full
-RUU_count                 237981629 # cumulative RUU occupancy
-RUU_fcount                        0 # cumulative RUU full count
-ruu_occupancy               10.3925 # avg RUU occupancy (insn's)
-ruu_rate                     2.1835 # avg RUU dispatch rate (insn/cycle)
-ruu_latency                  4.7596 # avg RUU occupant latency (cycle's)
-ruu_full                     0.0000 # fraction of time (cycle's) RUU was full
-LSQ_count                 178892066 # cumulative LSQ occupancy
-LSQ_fcount                 18621662 # cumulative LSQ full count
-lsq_occupancy                7.8121 # avg LSQ occupancy (insn's)
-lsq_rate                     2.1835 # avg LSQ dispatch rate (insn/cycle)
-lsq_latency                  3.5778 # avg LSQ occupant latency (cycle's)
-lsq_full                     0.8132 # fraction of time (cycle's) LSQ was full
-sim_slip                  504861253 # total number of slip cycles
-avg_sim_slip                10.0972 # the average slip between issue and retirement
-bpred_2lev.lookups          2104729 # total number of bpred lookups
-bpred_2lev.updates          2104723 # total number of updates
-bpred_2lev.addr_hits        2104703 # total number of address-predicted hits
-bpred_2lev.dir_hits         2104709 # total number of direction-predicted hits (includes addr-hits)
-bpred_2lev.misses                14 # total number of misses
-bpred_2lev.jr_hits                0 # total number of address-predicted hits for JR's
-bpred_2lev.jr_seen                3 # total number of JR's seen
-bpred_2lev.jr_non_ras_hits.PP            0 # total number of address-predicted hits for non-RAS JR's
-bpred_2lev.jr_non_ras_seen.PP            0 # total number of non-RAS JR's seen
-bpred_2lev.bpred_addr_rate    1.0000 # branch address-prediction rate (i.e., addr-hits/updates)
-bpred_2lev.bpred_dir_rate    1.0000 # branch direction-prediction rate (i.e., all-hits/updates)
-bpred_2lev.bpred_jr_rate    0.0000 # JR address-prediction rate (i.e., JR addr-hits/JRs seen)
-bpred_2lev.bpred_jr_non_ras_rate.PP <error: divide by zero> # non-RAS JR addr-pred rate (ie, non-RAS JR hits/JRs seen)
-bpred_2lev.retstack_pushes            0 # total number of address pushed onto ret-addr stack
-bpred_2lev.retstack_pops            3 # total number of address popped off of ret-addr stack
-bpred_2lev.used_ras.PP            3 # total number of RAS predictions used
-bpred_2lev.ras_hits.PP            0 # total number of RAS hits
-bpred_2lev.ras_rate.PP    0.0000 # RAS prediction rate (i.e., RAS hits/used RAS)
-il1.accesses               50000064 # total number of accesses
-il1.hits                   50000040 # total number of hits
-il1.misses                       24 # total number of misses
-il1.replacements                  0 # total number of replacements
+sim_num_insn               40305290 # total number of instructions committed
+sim_num_refs               19457738 # total number of loads and stores committed
+sim_num_loads              11692788 # total number of loads committed
+sim_num_stores         7764950.0000 # total number of stores committed
+sim_num_branches            4458942 # total number of branches committed
+sim_elapsed_time                 10 # total simulation time in seconds
+sim_inst_rate          4030529.0000 # simulation speed (in insts/sec)
+sim_total_insn             44549454 # total number of instructions executed
+sim_total_refs             20967480 # total number of loads and stores executed
+sim_total_loads            12795726 # total number of loads executed
+sim_total_stores       8171754.0000 # total number of stores executed
+sim_total_branches          5194599 # total number of branches executed
+sim_cycle                  27242926 # total simulation time in cycles
+sim_IPC                      1.4795 # instructions per cycle
+sim_CPI                      0.6759 # cycles per instruction
+sim_exec_BW                  1.6353 # total instructions (mis-spec + committed) per cycle
+sim_IPB                      9.0392 # instruction per branch
+IFQ_count                  78885202 # cumulative IFQ occupancy
+IFQ_fcount                 18547570 # cumulative IFQ full count
+ifq_occupancy                2.8956 # avg IFQ occupancy (insn's)
+ifq_rate                     1.6353 # avg IFQ dispatch rate (insn/cycle)
+ifq_latency                  1.7707 # avg IFQ occupant latency (cycle's)
+ifq_full                     0.6808 # fraction of time (cycle's) IFQ was full
+RUU_count                 279511642 # cumulative RUU occupancy
+RUU_fcount                  3959675 # cumulative RUU full count
+ruu_occupancy               10.2600 # avg RUU occupancy (insn's)
+ruu_rate                     1.6353 # avg RUU dispatch rate (insn/cycle)
+ruu_latency                  6.2742 # avg RUU occupant latency (cycle's)
+ruu_full                     0.1453 # fraction of time (cycle's) RUU was full
+LSQ_count                 129862895 # cumulative LSQ occupancy
+LSQ_fcount                  7834044 # cumulative LSQ full count
+lsq_occupancy                4.7668 # avg LSQ occupancy (insn's)
+lsq_rate                     1.6353 # avg LSQ dispatch rate (insn/cycle)
+lsq_latency                  2.9150 # avg LSQ occupant latency (cycle's)
+lsq_full                     0.2876 # fraction of time (cycle's) LSQ was full
+sim_slip                  444095639 # total number of slip cycles
+avg_sim_slip                11.0183 # the average slip between issue and retirement
+bpred_2lev.lookups          5441038 # total number of bpred lookups
+bpred_2lev.updates          4458942 # total number of updates
+bpred_2lev.addr_hits        3698360 # total number of address-predicted hits
+bpred_2lev.dir_hits         3763010 # total number of direction-predicted hits (includes addr-hits)
+bpred_2lev.misses            695932 # total number of misses
+bpred_2lev.jr_hits           338407 # total number of address-predicted hits for JR's
+bpred_2lev.jr_seen           401132 # total number of JR's seen
+bpred_2lev.jr_non_ras_hits.PP        10217 # total number of address-predicted hits for non-RAS JR's
+bpred_2lev.jr_non_ras_seen.PP        30274 # total number of non-RAS JR's seen
+bpred_2lev.bpred_addr_rate    0.8294 # branch address-prediction rate (i.e., addr-hits/updates)
+bpred_2lev.bpred_dir_rate    0.8439 # branch direction-prediction rate (i.e., all-hits/updates)
+bpred_2lev.bpred_jr_rate    0.8436 # JR address-prediction rate (i.e., JR addr-hits/JRs seen)
+bpred_2lev.bpred_jr_non_ras_rate.PP    0.3375 # non-RAS JR addr-pred rate (ie, non-RAS JR hits/JRs seen)
+bpred_2lev.retstack_pushes       581930 # total number of address pushed onto ret-addr stack
+bpred_2lev.retstack_pops       438063 # total number of address popped off of ret-addr stack
+bpred_2lev.used_ras.PP       370858 # total number of RAS predictions used
+bpred_2lev.ras_hits.PP       328190 # total number of RAS hits
+bpred_2lev.ras_rate.PP    0.8849 # RAS prediction rate (i.e., RAS hits/used RAS)
+il1.accesses               46375032 # total number of accesses
+il1.hits                   45770332 # total number of hits
+il1.misses                   604700 # total number of misses
+il1.replacements             604188 # total number of replacements
 il1.writebacks                    0 # total number of writebacks
 il1.invalidations                 0 # total number of invalidations
-il1.miss_rate                0.0000 # miss rate (i.e., misses/ref)
-il1.repl_rate                0.0000 # replacement rate (i.e., repls/ref)
+il1.miss_rate                0.0130 # miss rate (i.e., misses/ref)
+il1.repl_rate                0.0130 # replacement rate (i.e., repls/ref)
 il1.wb_rate                  0.0000 # writeback rate (i.e., wrbks/ref)
 il1.inv_rate                 0.0000 # invalidation rate (i.e., invs/ref)
-dl1.accesses               37243412 # total number of accesses
-dl1.hits                   33964389 # total number of hits
-dl1.misses                  3279023 # total number of misses
-dl1.replacements            3278511 # total number of replacements
-dl1.writebacks              3278508 # total number of writebacks
+dl1.accesses               18364280 # total number of accesses
+dl1.hits                   17228382 # total number of hits
+dl1.misses                  1135898 # total number of misses
+dl1.replacements            1135386 # total number of replacements
+dl1.writebacks              1075040 # total number of writebacks
 dl1.invalidations                 0 # total number of invalidations
-dl1.miss_rate                0.0880 # miss rate (i.e., misses/ref)
-dl1.repl_rate                0.0880 # replacement rate (i.e., repls/ref)
-dl1.wb_rate                  0.0880 # writeback rate (i.e., wrbks/ref)
+dl1.miss_rate                0.0619 # miss rate (i.e., misses/ref)
+dl1.repl_rate                0.0618 # replacement rate (i.e., repls/ref)
+dl1.wb_rate                  0.0585 # writeback rate (i.e., wrbks/ref)
 dl1.inv_rate                 0.0000 # invalidation rate (i.e., invs/ref)
-ul2.accesses                6557555 # total number of accesses
-ul2.hits                    4918024 # total number of hits
-ul2.misses                  1639531 # total number of misses
-ul2.replacements            1635435 # total number of replacements
-ul2.writebacks              1635414 # total number of writebacks
+ul2.accesses                2815638 # total number of accesses
+ul2.hits                    2290375 # total number of hits
+ul2.misses                   525263 # total number of misses
+ul2.replacements             521167 # total number of replacements
+ul2.writebacks               517378 # total number of writebacks
 ul2.invalidations                 0 # total number of invalidations
-ul2.miss_rate                0.2500 # miss rate (i.e., misses/ref)
-ul2.repl_rate                0.2494 # replacement rate (i.e., repls/ref)
-ul2.wb_rate                  0.2494 # writeback rate (i.e., wrbks/ref)
+ul2.miss_rate                0.1866 # miss rate (i.e., misses/ref)
+ul2.repl_rate                0.1851 # replacement rate (i.e., repls/ref)
+ul2.wb_rate                  0.1838 # writeback rate (i.e., wrbks/ref)
 ul2.inv_rate                 0.0000 # invalidation rate (i.e., invs/ref)
-itlb.accesses              50000064 # total number of accesses
-itlb.hits                  50000059 # total number of hits
-itlb.misses                       5 # total number of misses
-itlb.replacements                 0 # total number of replacements
+itlb.accesses              46375032 # total number of accesses
+itlb.hits                  46374952 # total number of hits
+itlb.misses                      80 # total number of misses
+itlb.replacements                20 # total number of replacements
 itlb.writebacks                   0 # total number of writebacks
 itlb.invalidations                0 # total number of invalidations
 itlb.miss_rate               0.0000 # miss rate (i.e., misses/ref)
 itlb.repl_rate               0.0000 # replacement rate (i.e., repls/ref)
 itlb.wb_rate                 0.0000 # writeback rate (i.e., wrbks/ref)
 itlb.inv_rate                0.0000 # invalidation rate (i.e., invs/ref)
-dtlb.accesses              37987734 # total number of accesses
-dtlb.hits                  37962111 # total number of hits
-dtlb.misses                   25623 # total number of misses
-dtlb.replacements             25495 # total number of replacements
+dtlb.accesses              19995890 # total number of accesses
+dtlb.hits                  19987472 # total number of hits
+dtlb.misses                    8418 # total number of misses
+dtlb.replacements              8290 # total number of replacements
 dtlb.writebacks                   0 # total number of writebacks
 dtlb.invalidations                0 # total number of invalidations
-dtlb.miss_rate               0.0007 # miss rate (i.e., misses/ref)
-dtlb.repl_rate               0.0007 # replacement rate (i.e., repls/ref)
+dtlb.miss_rate               0.0004 # miss rate (i.e., misses/ref)
+dtlb.repl_rate               0.0004 # replacement rate (i.e., repls/ref)
 dtlb.wb_rate                 0.0000 # writeback rate (i.e., wrbks/ref)
 dtlb.inv_rate                0.0000 # invalidation rate (i.e., invs/ref)
 sim_invalid_addrs                 0 # total non-speculative bogus addresses seen (debug var)
@@ -249,9 +486,9 @@ ld_stack_size                 16384 # program initial stack size
 ld_prog_entry          0x01200109b0 # program entry point (initial PC)
 ld_environ_base        0x011ff97000 # program environment base address address
 ld_target_big_endian              0 # target executable endian-ness, non-zero if big endian
-mem.page_count                24691 # total number of pages allocated
-mem.page_mem                197528k # total size of memory pages allocated
-mem.ptab_misses               24742 # total first level page table misses
-mem.ptab_accesses        1456126984 # total page table accesses
-mem.ptab_miss_rate           0.0000 # first level page table miss rate
+mem.page_count                24716 # total number of pages allocated
+mem.page_mem                197728k # total size of memory pages allocated
+mem.ptab_misses              144020 # total first level page table misses
+mem.ptab_accesses        1834501020 # total page table accesses
+mem.ptab_miss_rate           0.0001 # first level page table miss rate
 
