@@ -945,7 +945,7 @@ sim_check_options(struct opt_odb_t *odb,        /* options database */
 
       pred = bpred_create(BPred2Level,
 			  /* bimod table size */0,
-			  /* 2lev l1 size */twolev_config[0],
+			  /* 2lev l1 size */twolev_config[0],     // [0]BHR size = 1,   [1]l2size, [2]log2x [3]xor = 1
 			  /* 2lev l2 size */twolev_config[1],
 			  /* meta table size */0,
 			  /* history reg size */twolev_config[2],
@@ -976,7 +976,7 @@ sim_check_options(struct opt_odb_t *odb,        /* options database */
 			  /* btb sets */btb_config[0],
 			  /* btb assoc */btb_config[1],
 			  /* ret-addr stack size */ras_size);
-    }
+    }   
     else if (!mystricmp(pred_type, "cascade")){
       pred = bpred_create(BpredCascade,
 			  /* bimod table size */bimod_config[0],
