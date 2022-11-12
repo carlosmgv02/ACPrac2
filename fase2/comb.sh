@@ -25,7 +25,7 @@ do
     ((j++))
     tasca="combAMMP$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
     -bpred comb
     -bpred:comb $z
@@ -49,7 +49,7 @@ do
     ((j++))
     tasca="combEON$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
     -bpred comb
     -bpred:comb $z
@@ -74,12 +74,12 @@ do
     ((j++))
     tasca="combEQUAKE$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
-    -bpred comb
-    -bpred:comb $z
-    -bpred:bimod $y
-    -bpred:2lev 1 $x $i 1
+    -bpred comb \
+    -bpred:comb $z \
+    -bpred:bimod $y \
+    -bpred:2lev 1 $x $i 1 \
 	-redir:sim $dir/$tasca /lib/specs2000/equake/exe/equake.exe < inp.in > $dir/inp.out 2> $dir/inp.err	
 
     grep "sim_IPC" $dir/$tasca >> $out
@@ -99,7 +99,7 @@ do
     ((j++))
     tasca="combGAP$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
     -bpred comb
     -bpred:comb $z
@@ -125,7 +125,7 @@ do
     ((j++))
     tasca="combMESA$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
     -bpred comb
     -bpred:comb $z
