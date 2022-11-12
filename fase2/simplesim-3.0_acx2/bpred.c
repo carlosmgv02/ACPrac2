@@ -636,7 +636,20 @@ bpred_lookup(struct bpred_t *pred,	/* branch predictor instance */
 	  char *bimod, *twolev;
 	  bimod = bpred_dir_lookup (pred->dirpred.bimod, baddr);
 	  twolev = bpred_dir_lookup (pred->dirpred.twolev, baddr);
-    
+
+	  dir_update_ptr->dir.bimod = (*bimod >= 2);
+	  dir_update_ptr->dir.twolev  = (*twolev >= 2);
+
+	  if (*twolev == 4)
+	    {
+	      dir_update_ptr->pdir1 = bimod;
+	      dir_update_ptr->pdir2 = twolev;
+	    }
+	  else
+	    {
+	      dir_update_ptr->pdir1 = twolev;
+	      dir_update_ptr->pdir2 = bimod;
+	    }
 	}
       break;
 
