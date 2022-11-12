@@ -25,12 +25,12 @@ do
     ((j++))
     tasca="combAMMP$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
-    -bpred comb
-    -bpred:comb $z
-    -bpred:bimod $y
-    -bpred:2lev 1 $x $i 1
+    -bpred comb \
+    -bpred:comb $z \
+    -bpred:bimod $y \
+    -bpred:2lev 1 $x $i 1 \
     -redir:sim $dir/$tasca /lib/specs2000/ammp/exe/ammp.exe < ammp.in > $dir/ammp.out 2> $dir/ammp.err
     grep "sim_IPC" $dir/$tasca >> $out
     grep "bpred_$pred.bpred_dir_rate" $dir/$tasca >> $out
@@ -49,12 +49,12 @@ do
     ((j++))
     tasca="combEON$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
-    -bpred comb
-    -bpred:comb $z
-    -bpred:bimod $y
-    -bpred:2lev 1 $x $i 1
+    -bpred comb \
+    -bpred:comb $z \
+    -bpred:bimod $y \
+    -bpred:2lev 1 $x $i 1 \
 	-redir:sim $dir/$tasca /lib/specs2000/eon/exe/eon.exe chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook > $dir/cook_log.out 2> $dir/cook_log.err
 
     grep "sim_IPC" $dir/$tasca >> $out
@@ -74,12 +74,12 @@ do
     ((j++))
     tasca="combEQUAKE$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
-    -bpred comb
-    -bpred:comb $z
-    -bpred:bimod $y
-    -bpred:2lev 1 $x $i 1
+    -bpred comb \
+    -bpred:comb $z \
+    -bpred:bimod $y \
+    -bpred:2lev 1 $x $i 1 \
 	-redir:sim $dir/$tasca /lib/specs2000/equake/exe/equake.exe < inp.in > $dir/inp.out 2> $dir/inp.err	
 
     grep "sim_IPC" $dir/$tasca >> $out
@@ -99,12 +99,12 @@ do
     ((j++))
     tasca="combGAP$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
-    -bpred comb
-    -bpred:comb $z
-    -bpred:bimod $y
-    -bpred:2lev 1 $x $i 1
+    -bpred comb \
+    -bpred:comb $z \
+    -bpred:bimod $y \
+    -bpred:2lev 1 $x $i 1 \
 	-redir:sim $dir/$tasca /lib/specs2000/gap/exe/gap.exe -l /usr/lib/specs2000/gap/data/all -q -m 192M < ref.in > $dir/ref.out 2> $dir/ref.err
 
     grep "sim_IPC" $dir/$tasca >> $out
@@ -125,12 +125,12 @@ do
     ((j++))
     tasca="combMESA$i.txt"
     echo "processing "$tasca
-    $sim/sim-outorder -fastfwd 100000000 \
+    sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
-    -bpred comb
-    -bpred:comb $z
-    -bpred:bimod $y
-    -bpred:2lev 1 $x $i 1
+    -bpred comb \
+    -bpred:comb $z \
+    -bpred:bimod $y \
+    -bpred:2lev 1 $x $i 1 \
 	-redir:sim $dir/$tasca /lib/specs2000/mesa/exe/mesa.exe -frames 1000 -meshfile mesa.in -ppmfile mesa.ppm	
 
     grep "sim_IPC" $dir/$tasca >> $out
