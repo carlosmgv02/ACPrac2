@@ -81,7 +81,7 @@ bpred_create(enum bpred_class class,	/* type of predictor to create */
     fatal("out of virtual memory");
 
   pred->class = class;
-
+  
 
   switch (class) {
   case BPredComb:
@@ -224,7 +224,7 @@ bpred_dir_create (
       if (!shift_width || shift_width > 30)
 	fatal("shift register width, `%d', must be non-zero and positive",
 	      shift_width);
-      pred_dir->config.two.shift_width = shift_width;
+      pred_dir->config.two.shift_width = shift_width; 
       
       pred_dir->config.two.xor = xor;
       pred_dir->config.two.shiftregs = calloc(l1size, sizeof(int));
