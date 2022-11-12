@@ -1,3 +1,4 @@
+
 /* bpred.c - branch predictor routines */
 
 /* SimpleScalar(TM) Tool Suite
@@ -215,9 +216,9 @@ bpred_dir_create (
 	fatal("level-1 size, `%d', must be non-zero and a power of two", 
 	      l1size);
       pred_dir->config.two.l1size = l1size;
-      
+                                                                        //1 x log2x 1     
       if (!l2size || (l2size & (l2size-1)) != 0)
-	fatal("level-2 size, `%d', must be non-zero and a power of two", 
+	fatal("level-2 size, `%d', must be non-zero and a power of two",                       
 	      l2size);
       pred_dir->config.two.l2size = l2size;
       
@@ -236,7 +237,7 @@ bpred_dir_create (
 	fatal("cannot allocate second level table");
 
       /* initialize counters to weakly this-or-that */
-      //flipflop = 1;   //s'ha d'inicialitzar la taula a 4
+      flipflop = 1;   //s'ha d'inicialitzar la taula a 4
       for (cnt = 0; cnt < l2size; cnt++)
 	{
     pred_dir->config.two.l2table[cnt] = 4;
@@ -259,8 +260,8 @@ bpred_dir_create (
     flipflop = 1;
     for (cnt = 0; cnt < l1size; cnt++)
       {
-	      pred_dir->config.bimod.table[cnt] = flipflop;
-	      flipflop = 3 - flipflop;
+	      pred_dir->config.bimod.table[cnt] = 3;
+	      //flipflop = 3 - flipflop;
       }
 
     break;
@@ -522,10 +523,10 @@ bpred_dir_lookup(struct bpred_dir_t *pred_dir,	/* branch dir predictor inst */
 
   /* Except for jumps, get a pointer to direction-prediction bits */
   switch (pred_dir->class) {
-    case BPred2Level:
+    case BPred2Level: //gshare
       {
-	int l1index, l2index;
-
+	int l1index, l2index;    
+        
         /* traverse 2-level tables */
         l1index = (baddr >> MD_BR_SHIFT) & (pred_dir->config.two.l1size - 1);
         l2index = pred_dir->config.two.shiftregs[l1index];
@@ -553,7 +554,7 @@ bpred_dir_lookup(struct bpred_dir_t *pred_dir,	/* branch dir predictor inst */
         l2index = l2index & (pred_dir->config.two.l2size - 1);
 
         /* get a pointer to prediction state information */
-        p = &pred_dir->config.two.l2table[l2index];
+        p = &pred_dir->config.two.l2table[l2index];  //p= @   *p = 3
       }
       break;
     case BPred2bit:
@@ -628,6 +629,17 @@ bpred_lookup(struct bpred_t *pred,	/* branch predictor instance */
 	    }
 	}
       break;
+    
+    case BpredCascade:
+      if ((MD_OP_FLAGS(op) & (F_CTRL|F_UNCOND)) != (F_CTRL|F_UNCOND))
+	{
+	  char *bimod, *twolev;
+	  bimod = bpred_dir_lookup (pred->dirpred.bimod, baddr);
+	  twolev = bpred_dir_lookup (pred->dirpred.twolev, baddr);
+    
+	}
+      break;
+
     case BPred2Level:
       if ((MD_OP_FLAGS(op) & (F_CTRL|F_UNCOND)) != (F_CTRL|F_UNCOND))
 	{
