@@ -636,8 +636,7 @@ bpred_lookup(struct bpred_t *pred,	/* branch predictor instance */
 	  char *bimod, *twolev;
 	  bimod = bpred_dir_lookup (pred->dirpred.bimod, baddr);
 	  twolev = bpred_dir_lookup (pred->dirpred.twolev, baddr);
-
-	  dir_update_ptr->dir.bimod = (*bimod >= 2);
+    dir_update_ptr->dir.bimod = (*bimod >= 2);
 	  dir_update_ptr->dir.twolev  = (*twolev >= 2);
 
 	  if (*twolev == 4)
@@ -965,63 +964,101 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
   /* update state (but not for jumps) */
   
 
-  if (!!pred_taken == !!taken){
-
-    if (dir_update_ptr->pdir1)
-      {
-        if (taken)
-    {
-      if (*dir_update_ptr->pdir1 < 3)
-        ++*dir_update_ptr->pdir1;
-    }
-        else
-    { /* not taken */
-      if (*dir_update_ptr->pdir1 > 0)
-        --*dir_update_ptr->pdir1;
-    }
-      }
-
-  }else{
-
-    dir_update_ptr->pdir1 = dir_update_ptr->pdir2;
-    
-    if (dir_update_ptr->pdir1)
-      {
-        if (taken)
-    {
-      if (*dir_update_ptr->pdir1 < 3)
-        ++*dir_update_ptr->pdir1;
-    }
-        else
-    { /* not taken */
-      if (*dir_update_ptr->pdir1 > 0)
-        --*dir_update_ptr->pdir1;
-    }
-      }
-  }
-    
-
-
   
+    
+    // if (dir_update_ptr->pdir1 ){
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir1 < 3)
+    //         ++*dir_update_ptr->pdir1;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir1 > 0)
+    //         --*dir_update_ptr->pdir1;
+    //     }
+    // }
 
+    // if (dir_update_ptr->pdir2){
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir2 < 3)
+    //         ++*dir_update_ptr->pdir2;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir2 > 0)
+    //         --*dir_update_ptr->pdir2;
+    //     }
+    // }
+
+
+    if(!!taken == !!pred_taken && dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.bimod, baddr)){
+        if (taken){
+          if (*dir_update_ptr->pdir1 < 3)
+            ++*dir_update_ptr->pdir1;
+        }else{ /* not taken */
+          if (*dir_update_ptr->pdir1 > 0)
+            --*dir_update_ptr->pdir1;
+        }
+    }
+
+    if(!!taken != !!pred_taken && dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.bimod, baddr)){
+        if (taken){
+          if (*dir_update_ptr->pdir1 < 3)
+            ++*dir_update_ptr->pdir1;
+        }else{ /* not taken */
+          if (*dir_update_ptr->pdir1 > 0)
+            --*dir_update_ptr->pdir1;
+        }
+        if (taken){
+          if (*dir_update_ptr->pdir2 < 3)
+            ++*dir_update_ptr->pdir2;
+        }else{ /* not taken */
+          if (*dir_update_ptr->pdir2 > 0)
+            --*dir_update_ptr->pdir2;
+        }
+    }
+
+    if(!!taken == !!pred_taken && dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.twolev, baddr)){
+        if (taken){
+          if (*dir_update_ptr->pdir1 < 3)
+            ++*dir_update_ptr->pdir1;
+        }else{ /* not taken */
+          if (*dir_update_ptr->pdir1 > 0)
+            --*dir_update_ptr->pdir1;
+        }
+        if (taken){
+          if (*dir_update_ptr->pdir2 < 3)
+            ++*dir_update_ptr->pdir2;
+        }else{ /* not taken */
+          if (*dir_update_ptr->pdir2 > 0)
+            --*dir_update_ptr->pdir2;
+        }   
+    }
+
+    if(!!taken != !!pred_taken && dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.twolev, baddr)){
+        if (taken){
+          if (*dir_update_ptr->pdir2 < 3)
+            ++*dir_update_ptr->pdir2;
+        }else{ /* not taken */
+          if (*dir_update_ptr->pdir2 > 0)
+            --*dir_update_ptr->pdir2;
+        }   
+    }
+   
+
+
+    
+    
 
 
   /* comb predictor also updates second predictor and meta predictor */
   /* second direction predictor */
 
-  // if (dir_update_ptr->pdir2)
-  //   {
-  //     if (taken)
-	// {
-	//   if (*dir_update_ptr->pdir2 < 3)
-	//     ++*dir_update_ptr->pdir2;
-	// }
-  //     else
-	// { /* not taken */
-	//   if (*dir_update_ptr->pdir2 > 0)
-	//     --*dir_update_ptr->pdir2;
-	// }
-  //   }
+    // if (dir_update_ptr->pdir2){
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir2 < 3)
+    //         ++*dir_update_ptr->pdir2;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir2 > 0)
+    //         --*dir_update_ptr->pdir2;
+    //     }
+    // // }
   
 
   /* meta predictor */
