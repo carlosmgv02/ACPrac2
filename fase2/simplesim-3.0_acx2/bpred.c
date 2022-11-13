@@ -878,7 +878,7 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
   /* update L1 table if appropriate */
   /* L1 table is updated unconditionally for combining predictor too */
   if ((MD_OP_FLAGS(op) & (F_CTRL|F_UNCOND)) != (F_CTRL|F_UNCOND) &&
-      (pred->class == BPred2Level || pred->class == BPredComb))
+      (pred->class == BPred2Level || pred->class == BPredComb || pred->class == BpredCascade))
     {
       int l1index, shift_reg;
       
@@ -977,7 +977,7 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
 	}
     }
 
-  /* combining predictor also updates second predictor and meta predictor */
+  /* comb predictor also updates second predictor and meta predictor */
   /* second direction predictor */
   if (dir_update_ptr->pdir2)
     {
