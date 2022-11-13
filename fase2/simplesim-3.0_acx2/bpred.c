@@ -963,56 +963,87 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
    */
 
   /* update state (but not for jumps) */
-  if (dir_update_ptr->pdir1)
+  
+
+  if (!!pred_taken == !!taken){
+
+    if (dir_update_ptr->pdir1)
+      {
+        if (taken)
     {
-      if (taken)
-	{
-	  if (*dir_update_ptr->pdir1 < 3)
-	    ++*dir_update_ptr->pdir1;
-	}
-      else
-	{ /* not taken */
-	  if (*dir_update_ptr->pdir1 > 0)
-	    --*dir_update_ptr->pdir1;
-	}
+      if (*dir_update_ptr->pdir1 < 3)
+        ++*dir_update_ptr->pdir1;
     }
+        else
+    { /* not taken */
+      if (*dir_update_ptr->pdir1 > 0)
+        --*dir_update_ptr->pdir1;
+    }
+      }
+
+  }else{
+
+    dir_update_ptr->pdir1 = dir_update_ptr->pdir2;
+    
+    if (dir_update_ptr->pdir1)
+      {
+        if (taken)
+    {
+      if (*dir_update_ptr->pdir1 < 3)
+        ++*dir_update_ptr->pdir1;
+    }
+        else
+    { /* not taken */
+      if (*dir_update_ptr->pdir1 > 0)
+        --*dir_update_ptr->pdir1;
+    }
+      }
+  }
+    
+
+
+  
+
+
 
   /* comb predictor also updates second predictor and meta predictor */
   /* second direction predictor */
-  if (dir_update_ptr->pdir2)
-    {
-      if (taken)
-	{
-	  if (*dir_update_ptr->pdir2 < 3)
-	    ++*dir_update_ptr->pdir2;
-	}
-      else
-	{ /* not taken */
-	  if (*dir_update_ptr->pdir2 > 0)
-	    --*dir_update_ptr->pdir2;
-	}
-    }
+
+  // if (dir_update_ptr->pdir2)
+  //   {
+  //     if (taken)
+	// {
+	//   if (*dir_update_ptr->pdir2 < 3)
+	//     ++*dir_update_ptr->pdir2;
+	// }
+  //     else
+	// { /* not taken */
+	//   if (*dir_update_ptr->pdir2 > 0)
+	//     --*dir_update_ptr->pdir2;
+	// }
+  //   }
+  
 
   /* meta predictor */
-  if (dir_update_ptr->pmeta)
-    {
-      if (dir_update_ptr->dir.bimod != dir_update_ptr->dir.twolev)
-	{
-	  /* we only update meta predictor if directions were different */
-	  if (dir_update_ptr->dir.twolev == (unsigned int)taken)
-	    {
-	      /* 2-level predictor was correct */
-	      if (*dir_update_ptr->pmeta < 3)
-		++*dir_update_ptr->pmeta;
-	    }
-	  else
-	    {
-	      /* bimodal predictor was correct */
-	      if (*dir_update_ptr->pmeta > 0)
-		--*dir_update_ptr->pmeta;
-	    }
-	}
-    }
+  // if (dir_update_ptr->pmeta)
+  //   {
+  //     if (dir_update_ptr->dir.bimod != dir_update_ptr->dir.twolev)
+	// {
+	//   /* we only update meta predictor if directions were different */
+	//   if (dir_update_ptr->dir.twolev == (unsigned int)taken)
+	//     {
+	//       /* 2-level predictor was correct */
+	//       if (*dir_update_ptr->pmeta < 3)             
+	// 	++*dir_update_ptr->pmeta;
+	//     }
+	//   else
+	//     {
+	//       /* bimodal predictor was correct */
+	//       if (*dir_update_ptr->pmeta > 0)
+	// 	--*dir_update_ptr->pmeta;
+	//     }
+	// }
+  //   }
 
   /* update BTB (but only for taken branches) */
   if (pbtb)
@@ -1020,17 +1051,17 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
       /* update current information */
       dassert(taken);
 
-      if (pbtb->addr == baddr)
-	{
-	  if (!correct)
-	    pbtb->target = btarget;
-	}
+      if (pbtb->addr == baddr){
+        if (!correct){
+          pbtb->target = btarget;
+        }
+      }
       else
-	{
-	  /* enter a new branch in the table */
-	  pbtb->addr = baddr;
-	  pbtb->op = op;
-	  pbtb->target = btarget;
-	}
+      {
+        /* enter a new branch in the table */
+        pbtb->addr = baddr;
+        pbtb->op = op;
+        pbtb->target = btarget;
+      }
     }
 }

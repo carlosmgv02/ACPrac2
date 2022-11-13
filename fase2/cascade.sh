@@ -7,7 +7,7 @@ eon="/lib/specs2000/eon/data/ref"
 equake="/lib/specs2000/equake/data/ref"
 gap="/lib/specs2000/gap/data/ref"
 mesa="/lib/specs2000/mesa/data/ref"
-
+pred="cascade"
 array=(4 8 16 32 64)
 arrayX=(8 32 128 512 2048)
 
