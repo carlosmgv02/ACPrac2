@@ -263,9 +263,8 @@ bpred_dir_create (
 	      pred_dir->config.bimod.table[cnt] = 3;
 	      //flipflop = 3 - flipflop;
       }
-
     break;
-
+  
   case BPredTaken:
   case BPredNotTaken:
     /* no other state */
@@ -827,7 +826,7 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
     }
   else if ((MD_OP_FLAGS(op) & (F_CTRL|F_COND)) == (F_CTRL|F_COND))
     {
-      if (dir_update_ptr->dir.meta)
+      if (dir_update_ptr->dir.meta  || dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.twolev, baddr))
 	pred->used_2lev++;
       else
 	pred->used_bimod++;
