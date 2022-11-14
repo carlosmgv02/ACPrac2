@@ -976,7 +976,7 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
         }
     }
 
-    if (dir_update_ptr->pdir2 && dir_update_ptr->pdir2 == bpred_dir_lookup (pred->dirpred.bimod, baddr)){
+    if (dir_update_ptr->pdir2 == bpred_dir_lookup (pred->dirpred.bimod, baddr)){
         if (taken){
           if (*dir_update_ptr->pdir2 < 3)
             ++*dir_update_ptr->pdir2;

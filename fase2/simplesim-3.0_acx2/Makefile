@@ -253,7 +253,7 @@ FFLAGS = -DDEBUG
 
 #
 # Point the Makefile to your Simplescalar-based bunutils, these definitions
-# should indicate where the include and library directories reside.
+# should indicate where the include and ligrary directories reside.
 # NOTE: these definitions are only required if BFD_LOADER is defined.
 #
 #BINUTILS_INC = -I../include
