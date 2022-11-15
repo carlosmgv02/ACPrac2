@@ -2,13 +2,16 @@
 
 root="$HOME/Documents/GitHub/ACPrac2/fase2/Comb/"
 sim="$HOME/Documents/GitHub/ACPrac2/fase2/simplesim-3.0_acx2"
+
 ammp="/lib/specs2000/ammp/data/ref"
 eon="/lib/specs2000/eon/data/ref"
 equake="/lib/specs2000/equake/data/ref"
 gap="/lib/specs2000/gap/data/ref"
 mesa="/lib/specs2000/mesa/data/ref"
 
-arrayZ=(4 8 64 128 512) #TO BE CHANGED
+pred="comb"
+
+arrayZ=(4 16 64 256 1024) #TO BE CHANGED
 arrayY=(4 8 16 32 64)
 arrayX=(8 32 128 512 2048)
 

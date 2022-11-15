@@ -8,7 +8,7 @@ of SimpleScalar, LLC (info@simplescalar.com).
 warning: section `.comment' ignored...
 sim: command line: /home/milax/Documents/GitHub/ACPrac2/fase2/simplesim-3.0_acx2/sim-outorder -fastfwd 100000000 -max:inst 100000000 -bpred cascade -bpred:bimod 16 -bpred:2lev 1 128 7 1 -redir:sim /home/milax/Documents/GitHub/ACPrac2/fase2/Cascade/mesa/cascadeMESA7.txt /lib/specs2000/mesa/exe/mesa.exe -frames 1000 -meshfile mesa.in -ppmfile mesa.ppm 
 
-sim: simulation started @ Tue Nov 15 12:51:41 2022, options follow:
+sim: simulation started @ Tue Nov 15 16:28:48 2022, options follow:
 
 sim-outorder: This simulator implements a very detailed out-of-order issue
 superscalar processor with a two-level memory system and speculative
@@ -138,8 +138,8 @@ sim_num_refs               35029422 # total number of loads and stores committed
 sim_num_loads              27416313 # total number of loads committed
 sim_num_stores         7613109.0000 # total number of stores committed
 sim_num_branches           16455678 # total number of branches committed
-sim_elapsed_time                 62 # total simulation time in seconds
-sim_inst_rate          1612903.2258 # simulation speed (in insts/sec)
+sim_elapsed_time                 49 # total simulation time in seconds
+sim_inst_rate          2040816.3265 # simulation speed (in insts/sec)
 sim_total_insn            114513797 # total number of instructions executed
 sim_total_refs             37992747 # total number of loads and stores executed
 sim_total_loads            29985388 # total number of loads executed
@@ -174,8 +174,8 @@ bpred_cascade.lookups      19756544 # total number of bpred lookups
 bpred_cascade.updates      16455678 # total number of updates
 bpred_cascade.addr_hits     13575190 # total number of address-predicted hits
 bpred_cascade.dir_hits     13583899 # total number of direction-predicted hits (includes addr-hits)
-bpred_cascade.used_bimod     10441925 # total number of bimodal predictions used
-bpred_cascade.used_2lev            0 # total number of 2-level predictions used
+bpred_cascade.used_bimod      6945869 # total number of bimodal predictions used
+bpred_cascade.used_2lev      3496056 # total number of 2-level predictions used
 bpred_cascade.misses        2871779 # total number of misses
 bpred_cascade.jr_hits       2578409 # total number of address-predicted hits for JR's
 bpred_cascade.jr_seen       2617716 # total number of JR's seen
