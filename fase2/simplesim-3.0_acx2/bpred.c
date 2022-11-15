@@ -237,13 +237,13 @@ bpred_dir_create (
 	fatal("cannot allocate second level table");
 
       /* initialize counters to weakly this-or-that */
-      //flipflop = 1;   s'ha d'inicialitzar la taula a 4
+      //flipflop = 1;   //s'ha d'inicialitzar la taula a 4
       for (cnt = 0; cnt < l2size; cnt++)
-      {
-        pred_dir->config.two.l2table[cnt] = 4;
-        //pred_dir->config.two.l2table[cnt] = flipflop;
-        //flipflop = 3 - flipflop;
-      }
+	{
+    pred_dir->config.two.l2table[cnt] = 4;
+	  //pred_dir->config.two.l2table[cnt] = flipflop;
+	  //flipflop = 3 - flipflop;
+	}
 
       break;
     }
@@ -263,8 +263,9 @@ bpred_dir_create (
 	      pred_dir->config.bimod.table[cnt] = 3;
 	      //flipflop = 3 - flipflop;
       }
+
     break;
-  
+
   case BPredTaken:
   case BPredNotTaken:
     /* no other state */
@@ -826,7 +827,7 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
     }
   else if ((MD_OP_FLAGS(op) & (F_CTRL|F_COND)) == (F_CTRL|F_COND))
     {
-      if (dir_update_ptr->dir.meta  || dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.twolev, baddr)) 
+      if (dir_update_ptr->dir.meta)
 	pred->used_2lev++;
       else
 	pred->used_bimod++;
@@ -975,7 +976,7 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
         }
     }
 
-    if (dir_update_ptr->pdir2 == bpred_dir_lookup (pred->dirpred.bimod, baddr) || !!taken != !!pred_taken || dir_update_ptr->pmeta){
+    if (dir_update_ptr->pdir2 == bpred_dir_lookup (pred->dirpred.bimod, baddr)) {
         if (taken){
           if (*dir_update_ptr->pdir2 < 3)
             ++*dir_update_ptr->pdir2;
@@ -983,33 +984,111 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
           if (*dir_update_ptr->pdir2 > 0)
             --*dir_update_ptr->pdir2;
         }
+    }else if(!!taken != !!pred_taken && dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.bimod, baddr)){
+      if (taken){
+        if (*dir_update_ptr->pdir2 < 3)
+          ++*dir_update_ptr->pdir2;
+      }else{ /* not taken */
+        if (*dir_update_ptr->pdir2 > 0)
+         --*dir_update_ptr->pdir2;
+        }
     }
+
+
+    // if(!!taken == !!pred_taken && dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.bimod, baddr)){
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir1 < 3)
+    //         ++*dir_update_ptr->pdir1;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir1 > 0)
+    //         --*dir_update_ptr->pdir1;
+    //     }
+    // }
+
+    // if(!!taken != !!pred_taken && dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.bimod, baddr)){
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir1 < 3)
+    //         ++*dir_update_ptr->pdir1;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir1 > 0)
+    //         --*dir_update_ptr->pdir1;
+    //     }
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir2 < 3)
+    //         ++*dir_update_ptr->pdir2;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir2 > 0)
+    //         --*dir_update_ptr->pdir2;
+    //     }
+    // }
+
+    // if(!!taken == !!pred_taken && dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.twolev, baddr)){
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir1 < 3)
+    //         ++*dir_update_ptr->pdir1;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir1 > 0)
+    //         --*dir_update_ptr->pdir1;
+    //     }
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir2 < 3)
+    //         ++*dir_update_ptr->pdir2;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir2 > 0)
+    //         --*dir_update_ptr->pdir2;
+    //     }   
+    // }
+
+    // if(!!taken != !!pred_taken && dir_update_ptr->pdir1 == bpred_dir_lookup (pred->dirpred.twolev, baddr)){
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir2 < 3)
+    //         ++*dir_update_ptr->pdir2;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir2 > 0)
+    //         --*dir_update_ptr->pdir2;
+    //     }   
+    // }
+   
+
+
+    
+    
 
 
   /* comb predictor also updates second predictor and meta predictor */
   /* second direction predictor */
 
+    // if (dir_update_ptr->pdir2){
+    //     if (taken){
+    //       if (*dir_update_ptr->pdir2 < 3)
+    //         ++*dir_update_ptr->pdir2;
+    //     }else{ /* not taken */
+    //       if (*dir_update_ptr->pdir2 > 0)
+    //         --*dir_update_ptr->pdir2;
+    //     }
+    // // }
+  
 
   /* meta predictor */
-    if (dir_update_ptr->pmeta)
-    {
-      if (dir_update_ptr->dir.bimod != dir_update_ptr->dir.twolev)
-      {
-        /* we only update meta predictor if directions were different */
-        if (dir_update_ptr->dir.twolev == (unsigned int)taken)
-        {
-          /* 2-level predictor was correct */
-          if (*dir_update_ptr->pmeta < 3)
-            ++*dir_update_ptr->pmeta;
-        }
-        else
-        {
-          /* bimodal predictor was correct */
-          if (*dir_update_ptr->pmeta > 0)
-            --*dir_update_ptr->pmeta;
-        }
-      }
-    }
+  // if (dir_update_ptr->pmeta)
+  //   {
+  //     if (dir_update_ptr->dir.bimod != dir_update_ptr->dir.twolev)
+	// {
+	//   /* we only update meta predictor if directions were different */
+	//   if (dir_update_ptr->dir.twolev == (unsigned int)taken)
+	//     {
+	//       /* 2-level predictor was correct */
+	//       if (*dir_update_ptr->pmeta < 3)             
+	// 	++*dir_update_ptr->pmeta;
+	//     }
+	//   else
+	//     {
+	//       /* bimodal predictor was correct */
+	//       if (*dir_update_ptr->pmeta > 0)
+	// 	--*dir_update_ptr->pmeta;
+	//     }
+	// }
+  //   }
 
   /* update BTB (but only for taken branches) */
   if (pbtb)
