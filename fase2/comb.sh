@@ -28,7 +28,7 @@ do
     ((j++))
     tasca="combAMMP$i.txt"
     echo "processing "$tasca
-    sim-outorder -fastfwd 100000000 \
+    $sim/sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
     -bpred comb \
     -bpred:comb $z \
@@ -52,7 +52,7 @@ do
     ((j++))
     tasca="combEON$i.txt"
     echo "processing "$tasca
-    sim-outorder -fastfwd 100000000 \
+    $sim/sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
     -bpred comb \
     -bpred:comb $z \
@@ -77,7 +77,7 @@ do
     ((j++))
     tasca="combEQUAKE$i.txt"
     echo "processing "$tasca
-    sim-outorder -fastfwd 100000000 \
+    $sim/sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
     -bpred comb \
     -bpred:comb $z \
@@ -102,7 +102,7 @@ do
     ((j++))
     tasca="combGAP$i.txt"
     echo "processing "$tasca
-    sim-outorder -fastfwd 100000000 \
+    $sim/sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
     -bpred comb \
     -bpred:comb $z \
@@ -128,7 +128,7 @@ do
     ((j++))
     tasca="combMESA$i.txt"
     echo "processing "$tasca
-    sim-outorder -fastfwd 100000000 \
+    $sim/sim-outorder -fastfwd 100000000 \
     -max:inst 100000000 \
     -bpred comb \
     -bpred:comb $z \

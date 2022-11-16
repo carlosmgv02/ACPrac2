@@ -8,4 +8,4 @@ bpred_comb.bpred_dir_rate    0.9365 # branch direction-prediction rate (i.e., al
 sim_IPC                      0.6975 # instructions per cycle
 bpred_comb.bpred_dir_rate    0.9652 # branch direction-prediction rate (i.e., all-hits/updates)
 sim_IPC                      0.7062 # instructions per cycle
-bpred_comb.bpred_dir_rate    0.9809 # branch direction-prediction rate (i.e., all-hits/updates)
+bpred_comb.bpred_dir_rate    0.9810 # branch direction-prediction rate (i.e., all-hits/updates)

@@ -3,9 +3,9 @@ sim_IPC                      1.1838 # instructions per cycle
 bpred_cascade.bpred_dir_rate    0.7630 # branch direction-prediction rate (i.e., all-hits/updates)
 sim_IPC                      1.1972 # instructions per cycle
 bpred_cascade.bpred_dir_rate    0.7691 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.2488 # instructions per cycle
-bpred_cascade.bpred_dir_rate    0.8470 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.2504 # instructions per cycle
+bpred_cascade.bpred_dir_rate    0.8476 # branch direction-prediction rate (i.e., all-hits/updates)
 sim_IPC                      1.2943 # instructions per cycle
 bpred_cascade.bpred_dir_rate    0.9073 # branch direction-prediction rate (i.e., all-hits/updates)
-sim_IPC                      1.3133 # instructions per cycle
-bpred_cascade.bpred_dir_rate    0.9308 # branch direction-prediction rate (i.e., all-hits/updates)
+sim_IPC                      1.3137 # instructions per cycle
+bpred_cascade.bpred_dir_rate    0.9311 # branch direction-prediction rate (i.e., all-hits/updates)
