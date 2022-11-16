@@ -18,7 +18,7 @@ arrayX=(8 32 128 512 2048)
 cd $ammp
 dir=$root"ammp"
 out=$dir"/COMB_AMMP.txt"
-echo "COMB: " >> $out
+echo "COMB: " > $out
 j=0
 for i in 3 5 7 9 11
 do
@@ -42,7 +42,7 @@ done
 cd $eon
 dir=$root"eon"
 out=$dir"/COMB_EON.txt"
-echo "COMB: " >> $out
+echo "COMB: " > $out
 j=0
 for i in 3 5 7 9 11
 do
@@ -67,7 +67,7 @@ done
 cd $equake
 dir=$root"equake"
 out=$dir"/COMB_EQUAKE.txt"
-echo "COMB: " >> $out
+echo "COMB: " > $out
 j=0
 for i in 3 5 7 9 11
 do
@@ -92,7 +92,7 @@ done
 cd $gap
 dir=$root"gap"
 out=$dir"/COMB_GAP.txt"
-echo "COMB: " >> $out
+echo "COMB: " > $out
 j=0
 for i in 3 5 7 9 11
 do
@@ -118,7 +118,7 @@ done
 cd $mesa
 dir=$root"mesa"
 out=$dir"/COMB_MESA.txt"
-echo "COMB: " >> $out
+echo "COMB: " > $out
 j=0
 for i in 3 5 7 9 11
 do

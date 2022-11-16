@@ -1,5 +1,4 @@
 COMB: 
-COMB: 
 sim_IPC                      1.2920 # instructions per cycle
 bpred_comb.bpred_dir_rate    0.7284 # branch direction-prediction rate (i.e., all-hits/updates)
 sim_IPC                      1.3134 # instructions per cycle
